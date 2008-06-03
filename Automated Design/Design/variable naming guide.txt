@@ -1,15 +1,15 @@
 dimension	component	subcomponent	subsub	variable name	Description	array	Returned to LabVIEW	User	BOD	FCM	Flocculation	Sedimentation	Entrance	Channel	Launder	Sludge Drain	Plant Level tank	Elevations	Minor Loss Coefficients	User+BOD+LabVIEW	has source	comments
-							25	18	33	3	9	15	1	2	6		4	0		76	96	
+							25	19	34	3	9	14	1	2	6		4	0		76	95	
 A	Sed	Tank	Active	A.SedTankActive	Active area in sed tank		1					1								1	1	
 AN	Sed	Bottom		AN.SedBottom	Sed bottom slope			1												1	1	
 AN	Sed	Plate		AN.SedPlate	Degree plate settlers are installed relative to the horizontal				1											1	1	
 B	Sed	Launder	Orifices	B.SedLaunderOrifices	spacing between orifices throughout the launder				1											1	1	
 B	Sed	Plate		B.SedPlate	plate settler spacing in the sedimentation tank		1					1								1	1	
 B	Sed	Sludge	Orifices	B.SedSludgeOrifices	Spacing of orifices in sludge pipe (center to center)		1					1								1	1	
-C	Fcm	Dose	Max	C.FcmDoseMax					1											1	1	
-C	Fcm	Stock		C.FcmStock				1												1	1	
+C	Fcm	Dose	Max	C.FcmDoseMax	Max concentration dose of flow control module				1											1	1	
+C	Fcm	Stock		C.FcmStock	stock concentration of flow control module			1												1	1	
 Cd	Plt	Weir		Cd.PltWeir	Weir Coefficient				1											1	1	
-D	Drum			D.Drum				1												1	1	
+D	Drum			D.Drum	diamater of drum			1												1	1	
 D	Launder	Orifices		D.LaunderOrifices	diameter of launder orifices		1								1					1	1	
 D	Sed	Sludge	Orifices	D.SedSludgeOrifices	Diameter of orifices in sludge pipe		1									1				1	1	
 D	Drill	Eng		D.DrillEng	English drill bit series	1			1											1	1	
@@ -19,18 +19,18 @@ E	PVC			E.PVC	PVC pipe roughness				1											1	1
 EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English)"			1												1	1
 EN	Fcm	Tube		EN.FcmTube	enumerated type for metric or english tubes			1												1	1
 EN	Pipe	Spec		EN.PipeSpec	enumerated type			1												1	1
-G	Floc			G.Floc	the ideal value of G in each of the three baffle spacings	1			1											1	1
-Gt	Floc	Min		Gt.FlocMin	the minimum value for Gtheta that a flocculator must have to be effective				1											1	1
-Gt	Floc	Total		Gt.FlocTotal					1											1	1
-Gt	Floc			Gt.Floc	G theta for the flocculator	1			1											1	1
-H	Ap	Column		H.ApColumn			1			1										1	1
-H	Cp	Column		H.CpColumn			1			1										1	1
-H	Drum			H.Drum				1												1	1
-H	Et			H.Et			1						1							1	1
+G	Floc	Bod		G.FlocBod	the ideal value of G in each of the baffle spacings	1			1											1	1
+Gt	Floc	Bod		Gt.FlocBod	the minimum value for Gtheta that a flocculator must have to be effective				1											1	1
+Gt	Floc	Min	Flow	Gt.FlocMinFlow	Gtheta at minimum design flow				1											1	1
+Gt	Floc	Max	Flow	Gt.FlocMaxFlow	Gtheta at maximum design flow																
+H	Ap	Column		H.ApColumn	height of alum platform		1			1										1	1
+H	Cp	Column		H.CpColumn	height of chlorine platform		1			1										1	1
+H	Drum			H.Drum	height of drum			1												1	1
+H	Et			H.Et	height of entrance tank		1						1							1	1
 HW	Floc	Start		HW.FlocStart	Water depth at the beginning of the floc tank		1				1									1	1
-H	Floc	Baffle	Overlap	H.FlocBaffleOverlap					1											1	1
+H	Floc	Baffle	Overlap	H.FlocBaffleOverlap	height of the floc baffle overlap				1											1	1
 H	Floc	Port		H.FlocPort	Height of u turn hole in flocculator		1				1									1	1
-H	Floc	Tank		H.FlocTank			1				1									1	1
+H	Floc	Tank		H.FlocTank	height of floc tank		1				1									1	1
 H	Plant	Freeboard		H.PlantFreeboard	Freeboard for tanks				1											1	1
 H	Plt	Wall		H.PltWall	"height of the wall for the plant leveling tank, should equal the height of the wall for the channel"		1										1			1	1
 H	Sed	Above		H.SedAbove	The height of water above the top of the plate settlers		1					1								1	1
@@ -39,34 +39,33 @@ H	Sed	Below	Straight	H.SedBelowStraight	height of the sloped floor in the bottom
 H	Sed	Below		H.SedBelow	the height of bottom of sed tank to the bottom of the plate settlers		1					1								1	1
 H	Sed	Plate		H.SedPlate	vertical height of plate settlers in the sedimentation tank		1					1								1	1
 H	Sed	Tank		H.SedTank	height of sed tank WALL		1					1								1	1
-HL	Fcm	Tube		HL.FcmTube					1											1	1
-HL	Fcm	Valve		HL.FcmValve			1			1										1	1
-HL	Fcm	Valve	Design	HL.FcmValveDesign																	
-HL	Floc			HL.Floc			1				1									1	1
+HL	Fcm	Tube		HL.FcmTube	headloss in flow control module tube				1											1	1
+HL	Fcm	Valve		HL.FcmValve	headloss in flow control module valve		1			1										1	1
+HL	Fcm	Valve	Design	HL.FcmValveDesign	?																
+HL	Floc			HL.Floc	headloss in the flocculator		1				1									1	1
 HL	Sed	Launder		HL.SedLaunder	Calculated Launder headloss		1								1					1	1
 HL	Sed	Launder	Design	HL.SedLaunderDesign	Design Maximum Launder head loss		1								1					1	1
 HL	Rm	Design		HL.RmDesign	Design Maximum Rapid Mix head loss		1								1					1	1
 HL	Rm			HL.Rm	Rapid Mix head loss																	
 HW	Channel			HW.Channel	local water depth in the channel									1						0	1	
-HW	Et			HW.Et																0	0	
+HW	Et			HW.Et	local water height of the rntrance tank															0	0	
 HW	Plt			HW.Plt	local water depth in the plant leveling tank												1			0	1	
-HW	Sed	Tank		HW.SedTank	water depth of the sed tank							1								0	1	
-ID	Fcm	Valve	Orifice	ID.FcmValveOrifice					1											1	1	
+HW	Sed			HW.Sed	water depth of the sed tank							1								0	1	
+ID	Fcm	Valve	Orifice	ID.FcmValveOrifice	inner diameter of flow control module valve				1											1	1	
 ID	Sed	Pipe		ID.SedPipe	inner diameter of sed pipe 															0	0	eliminate this variable
-K	Cr			K.Cr															1	0	1	
-K	El			K.El															1	0	1	
-K	Floc	Baffle	180	K.FlocBaffle180															1	0	1	Perhaps K.180???
-K	Tee			K.Tee															1	0	1	
+K	Cr			K.Cr	minor loss coefficient of a cross														1	0	1	
+K	El			K.El	minor loss coefficient of a elbow\														1	0	1	
+K	Floc	Baffle	180	K.FlocBaffle180	minor loss coeff. Of 180 degree turn in the flocculator between baffles														1	0	1	Perhaps K.180???
+K	Tee			K.Tee	"minor loss coeff of a ""t"""														1	0	1	
 K	Sed	Launder		K.SedLaunder	sum of minor losses in sed launders (not including orifices losses)		1								1					1	1	
-L	Ap	Column		L.ApColumn					1											1	1	
-L	Cp	Column		L.CpColumn																0	0	
-L	Et			L.Et																0	0	
-L	Fcm	Tube	Min	L.FcmTubeMin					1											1	1	
-L	Fcm	Tube	Max	L.FcmTubeMax					1											1	1	
+L	Ap	Column		L.ApColumn	length of the alum platform 				1											1	1	
+L	Cp	Column		L.CpColumn	length of the chlorine platform															0	0	
+L	Et			L.Et	length of the entrance tank															0	0	
+L	Fcm	Tube	Min	L.FcmTubeMin	minimum length of the flow contol module tube 				1											1	1	
+L	Fcm	Tube	Max	L.FcmTubeMax	maximum length of the flow contol module tube 				1											1	1	
 L	Floc	Baffle		L.FlocBaffle	length of baffle	1					1									0	1	
 L	Floc	Baffle	Up	L.FlocBaffleUp	length of baffles in upper section															0	0	
 L	Floc	Baffle	Down	L.FlocBaffleDown	length of baffle in lower section															0	0	
-L	Floc	Tank		L.FlocTank								1								0	1	
 L	Sed	Launder	Long	L.SedLaunderLong	length of longest launder															0	0	
 L	Sed	Launder	Short	L.SedLaunderShort	length of shortest launder															0	0	
 L	Plt	Assumed		L.PltAssumed	Length of plant leveling tank												1			0	1	
@@ -77,16 +76,17 @@ L	Sed	Tank	Active	L.SedTankActive	Active length in sed tank							1								0	1
 L	Sludge	Ports		L.SludgePorts	length of sludge ports (Is this the length of the manifold)????															0	0	seems redundant with length of sed tank
 N	Floc	Baffle		N.FlocBaffle	number in each section	1					1									0	1	
 N	Floc	Baffle	Total	N.FlocBaffleTotal	total number of baffles																	
-N	Floc	Tank	Channels	N.FlocTankChannels																0	0	
-N	Lfom	Orifices	Firstrow	N.LfomOrificesFirstrow	target number of orifices in the bottom row of the LFOM				1											1	1
+N	Floc	Tank	Channels	N.FlocTankChannels	number of floc tank channels															0	0	
+N	Lfom	Orifices	Firstrow	N.LfomOrificesFirstrow	target number of orifices in the bottom row of the LFOM				1											1	1	
 N	Sed	Tank		N.SedTank	number of sed tanks				1											1	1
 N	Sed	Inlets		N.SedInlets	number of inlet pipes into Sed tank				1											1	1
 N	Sludge	Ports		N.SludgePorts	number of sludge ports															0	0
-ND	Launder			ND.Launder																0	0
+ND	Launder			ND.Launder	nominal diameter of launder															0	0
 ND	Plt	Weir		ND.PltWeir	nominal diameter of the weir in the Plt												1			0	1
 ND	Sed	Pipe	Entrance	ND.SedPipeEntrance	nominal diameter of entrance pipe to sed tank									1						0	1
+ND	Lfom			ND.Lfom	nominal diameter of Lfom and of Rm pipe																
 ND	Sed	Sludge		ND.SedSludge	Sludge pipe diameter in sed tank										1					0	1
-NU	Fcm	Stock		NU.FcmStock					1											1	1
+NU	Fcm	Stock		NU.FcmStock	NU value				1											1	1
 Pi	Floc	Baffle		Pi.FlocBaffle	Is this the ratio of the opening at the bottom of the baffle over B?															0	0
 Pi	Floc	Dissipation		Pi.FlocDissipation	dissipation length scale/B.FlocBaffle															0	0
 Pi	Launder	Orifice		Pi.LaunderOrifice	ratio of flow between the orifices within the launder (the farthest orifice divided by the closest orifice)				1											1	1
@@ -98,20 +98,22 @@ Pi	Q	Launders		Pi.QLaunders	max to min flow ratio between sed tanks				1								
 Pi	Q	Plant		Pi.QPlant	Plant flow ratio (required for flocculator design)				1											1	1	
 Pi	Sed	Above	W	Pi.SedAboveW	"ratio between depth of water above plate settlers, and tank width"				1											1	1	
 Pi	Sludge			Pi.Sludge	Q sludge orifice ratio															0	0	???
-Po	Floc	Baffle		Po.FlocBaffle	Baffle position in flocculator															0	0	"redundant with X, Z, L.FlocBaffle"
-Q	Fcm	Max		Q.FcmMax																0	0	
+Q	Fcm	Max		Q.FcmMax	max flow in flow control module															0	0	
 Q	Plant			Q.Plant	plant flow rate			1												1	1	
 Q	Sed	Tank		Q.SedTank	flow rate in sed tank							1								0	1	
-Q	Sludge	Drain	Initial	Q.SludgeDrainInitial																0	0	
-S	Drum			S.Drum																0	0	
+Q	Sludge	Drain	Initial	Q.SludgeDrainInitial	initial flow in the sludge drain															0	0	
+S	Drum			S.Drum	space between drums															0	0	
 S	Floc	Baffle		S.FlocBaffle	spacing in each section	1		1												1	1	
-S	Floc	Baffle	Last	S.FlocBaffleLast	spacing in the last section															0	0	redundant
 S	Floc	Port		S.FlocPort	"extra space around the hole that the water flows through when making the u turn, between the hole and the last baffle"																	
 S	Plt			S.Plt	concrete space between pipes				1											1	1	
 T	Channel	Wall		T.ChannelWall	thickness of channel wall															0	0	
 T	Plt	Wall		T.PltWall	thickness of plant leveling tank walls			1												1	1	
-T	Sed	Wall		T.SedWall	thickness of sed tank walls			1												1	1
+T	Sed	Wall		T.SedWall	thickness of sed tank walls			1												1	1	
+T	Floc	Baffle		T.FlocBaffle	Thickness of floc baffles			1												1	1	
+T	Sed	Plate		T.SedPlate	Thickness of plate settlers																
 Ti	Sludge	Drain		Ti.SludgeDrain	time															0	0
+V	Sed	Up	Bod	V.SedUpBod	Maximum upflow velocity in sed tank				1												
+V	Sed	C	Bod	V.SedCBod	maximum sed velocity in plate settlers				1												
 W	Ap	Column		W.ApColumn					1											1	1
 W	Ap	Walkway		W.ApWalkway				1												1	1
 W	Channel			W.Channel	width of channel between flocculation and sedimentation tank		1													1	0
@@ -120,12 +122,12 @@ W	Cp	Walkway		W.CpWalkway																0	0
 W	Et			W.Et																0	0
 W	Floc	Baffle		W.FlocBaffle							1									0	1
 W	Floc	Port		W.FlocPort	Width of u turn hole in flocculator															0	0
-W	Floc	Tank		W.FlocTank				1												1	1
+W	Floc	Channel		W.FlocChannel				1												1	1
 W	Mp	Walkway		W.MpWalkway	width of the walkway on the main platform			1												1	1
 W	Sed	Plate		W.SedPlate	width of plate settlers in the sedimentation tank			1												1	1
 W	Sed	Tank		W.SedTank	width of sed tank			1				1								1	2
-X	Floc	Baffle		X.FlocBaffle	x location of baffle	1		1												1	1
-Z	Floc	Baffle		Z.FlocBaffle	elevation of bottom of baffle	1					1									0	1
+X	Floc	Baffle		X.FlocBaffle	x location of baffle	1		1												1	1	
+Z	Floc	Baffle		Z.FlocBaffle	elevation of bottom of baffle	1					1									0	1	
 Z	Floc	Pipe	Entrance	Z.FlocPipeEntrance							1									0	1	
 Z	Sed	Launder		Z.SedLaunder	elevation of the manifold measured from the bottom of the tank															0	0	
 Z	Sed	Inlet		Z.SedInlet	Height off of floor of sed inlet pipe															0	0	calculated by AutoCAD group
@@ -140,8 +142,8 @@ Z	Sed	Inlet		Z.SedInlet	Height off of floor of sed inlet pipe															0	0	
 																					0	
 																					0	
 																					0	
-																					0	
-																					0	
+																					0
+																					0
 																					0
 																					0
 																					0
