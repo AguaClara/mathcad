@@ -19,10 +19,10 @@ E	PVC			E.PVC	PVC pipe roughness				1											1	1
 EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English)"			1												1	1
 EN	Fcm	Tube		EN.FcmTube	enumerated type for metric or english tubes			1												1	1
 EN	Pipe	Spec		EN.PipeSpec	enumerated type			1												1	1
-G	Floc			G.Floc		1			1											1	1
-Gt	Floc	Min		Gt.FlocMin					1											1	1
+G	Floc			G.Floc	the ideal value of G in each of the three baffle spacings	1			1											1	1
+Gt	Floc	Min		Gt.FlocMin	the minimum value for Gtheta that a flocculator must have to be effective				1											1	1
 Gt	Floc	Total		Gt.FlocTotal					1											1	1
-Gt	Floc			Gt.Floc		1			1											1	1
+Gt	Floc			Gt.Floc	G theta for the flocculator	1			1											1	1
 H	Ap	Column		H.ApColumn			1			1										1	1
 H	Cp	Column		H.CpColumn			1			1										1	1
 H	Drum			H.Drum				1												1	1
@@ -76,8 +76,9 @@ L	Sed	Tank		L.SedTank	length of sed tank							1								0	1
 L	Sed	Tank	Active	L.SedTankActive	Active length in sed tank							1								0	1	
 L	Sludge	Ports		L.SludgePorts	length of sludge ports (Is this the length of the manifold)????															0	0	seems redundant with length of sed tank
 N	Floc	Baffle		N.FlocBaffle	number in each section	1					1									0	1	
+N	Floc	Baffle	Total	N.FlocBaffleTotal	total number of baffles																	
 N	Floc	Tank	Channels	N.FlocTankChannels																0	0	
-N	Lfom	Orifices	Firstrow	N.LfomOrificesFirstrow	target number of orifices in the bottom row of the LFOM				1											1	1	
+N	Lfom	Orifices	Firstrow	N.LfomOrificesFirstrow	target number of orifices in the bottom row of the LFOM				1											1	1
 N	Sed	Tank		N.SedTank	number of sed tanks				1											1	1
 N	Sed	Inlets		N.SedInlets	number of inlet pipes into Sed tank				1											1	1
 N	Sludge	Ports		N.SludgePorts	number of sludge ports															0	0
@@ -93,8 +94,8 @@ Pi	Launder			Pi.Launder	"ratio of flow between the launders, the long path flow 
 Pi	Lfom	H		Pi.LfomH	location between rows of orifices where flow is optimized				1											1	1
 Pi	Plt	Weir		Pi.PltWeir	ratio between the water depth above the weir and the diameter of the weir 				1											1	1
 Pi	Q	Launder	Orifices	Pi.QLaunderOrifices	max to min flow ratio between launder orifices				1											1	1
-Pi	Q	Launders		Pi.QLaunders	max to min flow ratio between sed tanks				1											1	1
-Pi	Q			Pi.Q	Plant flow ratio (required for flocculator design)				1											1	1	
+Pi	Q	Launders		Pi.QLaunders	max to min flow ratio between sed tanks				1											1	1	
+Pi	Q	Plant		Pi.QPlant	Plant flow ratio (required for flocculator design)				1											1	1	
 Pi	Sed	Above	W	Pi.SedAboveW	"ratio between depth of water above plate settlers, and tank width"				1											1	1	
 Pi	Sludge			Pi.Sludge	Q sludge orifice ratio															0	0	???
 Po	Floc	Baffle		Po.FlocBaffle	Baffle position in flocculator															0	0	"redundant with X, Z, L.FlocBaffle"
@@ -105,11 +106,12 @@ Q	Sludge	Drain	Initial	Q.SludgeDrainInitial																0	0
 S	Drum			S.Drum																0	0	
 S	Floc	Baffle		S.FlocBaffle	spacing in each section	1		1												1	1	
 S	Floc	Baffle	Last	S.FlocBaffleLast	spacing in the last section															0	0	redundant
+S	Floc	Port		S.FlocPort	"extra space around the hole that the water flows through when making the u turn, between the hole and the last baffle"																	
 S	Plt			S.Plt	concrete space between pipes				1											1	1	
 T	Channel	Wall		T.ChannelWall	thickness of channel wall															0	0	
 T	Plt	Wall		T.PltWall	thickness of plant leveling tank walls			1												1	1	
-T	Sed	Wall		T.SedWall	thickness of sed tank walls			1												1	1	
-Ti	Sludge	Drain		Ti.SludgeDrain	time															0	0	
+T	Sed	Wall		T.SedWall	thickness of sed tank walls			1												1	1
+Ti	Sludge	Drain		Ti.SludgeDrain	time															0	0
 W	Ap	Column		W.ApColumn					1											1	1
 W	Ap	Walkway		W.ApWalkway				1												1	1
 W	Channel			W.Channel	width of channel between flocculation and sedimentation tank		1													1	0
@@ -124,8 +126,8 @@ W	Sed	Plate		W.SedPlate	width of plate settlers in the sedimentation tank			1			
 W	Sed	Tank		W.SedTank	width of sed tank			1				1								1	2
 X	Floc	Baffle		X.FlocBaffle	x location of baffle	1		1												1	1
 Z	Floc	Baffle		Z.FlocBaffle	elevation of bottom of baffle	1					1									0	1
-Z	Floc	Pipe	Entrance	Z.FlocPipeEntrance							1									0	1
-Z	Sed	Launder		Z.SedLaunder	elevation of the manifold measured from the bottom of the tank															0	0
+Z	Floc	Pipe	Entrance	Z.FlocPipeEntrance							1									0	1	
+Z	Sed	Launder		Z.SedLaunder	elevation of the manifold measured from the bottom of the tank															0	0	
 Z	Sed	Inlet		Z.SedInlet	Height off of floor of sed inlet pipe															0	0	calculated by AutoCAD group
 																					0	
 																					0	
@@ -140,8 +142,8 @@ Z	Sed	Inlet		Z.SedInlet	Height off of floor of sed inlet pipe															0	0	
 																					0	
 																					0	
 																					0	
-																					0	
-																					0	
+																					0
+																					0
 																					0
 																					0
 																					0
