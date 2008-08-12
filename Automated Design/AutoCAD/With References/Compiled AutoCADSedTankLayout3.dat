@@ -15,14 +15,17 @@ c t 214,214,214
 inletslopes
   
 _-view o t
-_zoom w -2.668,0.5235,0.05032 0.01,0.5935,0.87329
-_box -2.658,0.5335,0.06033 0,0.5835,0.86329
+_zoom w -2.668,0.5235,0.05032 0.01,0.5935,0.80414
+_box -2.658,0.5335,0.06033 0,0.5835,0.79414
 _box -2.658,0.5335,0.06033 0,0.5835,0.11733
 _-view o r
-_subtract 0.5335,0.86329  0.5335,0.06033 
+_subtract 0.5335,0.79414  0.5335,0.06033 
 _-view o t
-_rotate3d -2.658,0.5335,0.06033  x -2.658,0.5335,0.06033 41.637
+_rotate3d -2.658,0.5335,0.06033  x -2.658,0.5335,0.06033 46.637
 _mirror all  -2.658,0.5335 -2.648,0.5335 
+_union all 
+_box -2.658,0.50334,0 0,0.56366,0.18098
+_-view o t _subtract -0.01,-0.01,-0.01 -0.6645,0.26675,0.325  0,0.5335,0 
 -layer s 0
   
 -layer f inletslopes
@@ -39,15 +42,21 @@ _rotate3d 0,0,0  z 0,0,0 270
 _mirror3d 0,0,0  zx 0,0.5335,0 n
 _union all 
 _move all  0,0,0 0,0,0.06033
--layer s 0
-  
+_-view o t
+_zoom w -2.668,0.5235,0.05032 0.01,0.5935,0.85137
+_box -2.658,0.5335,0.06033 0,0.5835,0.84137
+_box -2.658,0.5335,0.06033 0,0.5835,0.79414
+_-view o r
+_subtract 0.5335,0.84137  0.5335,0.06033 
+_-view o t
+_rotate3d -2.658,0.5335,0.06033  x -2.658,0.5335,0.06033 46.637
+_mirror all  -2.658,0.5335 -2.648,0.5335 
+_union all 
 -layer t tank
-  
--layer t inletslopes
   
 _union all 
 _box -2.658,0.50334,0 0,0.56366,0.18098
-_-view o t _subtract 0,0,0 0,1.067,0 0,-0.15,0  -2.658,0.50334,0 
+_-view o t _subtract -0.01,-0.01,-0.01 -0.6645,0.26675,0.325  0,0.5335,0 
 -layer s 0
   
 -layer f slopes
@@ -84,12 +93,21 @@ _subtract -2.377,-0.15,0.75  -2.40796,0.90979,0.75 -2.62704,0.15721,0.75
   
 -layer f channel
   
+-layer t inletslopes
+  
+_cylinder -2.5175,0.26675,0.75 0.10954 -0.5625
+_cylinder -2.5175,0.80025,0.75 0.10954 -0.5625
+_subtract 0,0,0  -2.40796,0.90979,0.75 -2.62704,0.15721,0.75 
+-layer s 0
+  
+-layer f inletslopes
+  
 -layer m inletpipes
 c t 0,255,255
 inletpipes
   
-_zoom w -0.5435,-0.01,0 0.01,0.61011,0
-_pline 0,0 -0.5335,0 0,0.60011 0,0 
+_zoom w -0.5435,-0.01,0 0.01,0.51385,0
+_pline 0,0 -0.5335,0 0,0.50385 0,0 
 _extrude 0,0,0  2.658
 _rotate3d 0,0,0  x 0,0,0 90
 _rotate3d 0,0,0  z 0,0,0 270
@@ -219,6 +237,8 @@ rotate3d 0,0,0.6  y 0,0,0.6 -30
   
 -layer t inletpipes
   
+-layer t inletslopes
+  
 _-view o t
 -array ALL  r 3 1 1.217
 -layer f pipe
@@ -240,6 +260,8 @@ _-view o t
 -layer f channel
   
 -layer f echannel
+  
+-layer f inletslopes
   
 _union all 
 -layer s 0
