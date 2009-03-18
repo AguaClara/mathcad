@@ -1,0 +1,329 @@
+											Program Outputs																Program Inputs												Inputs								Outputs						
+dimension	component	subcomponent	subsub	Variable Name	Description	array	Returned to LabVIEW	User	BOD	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Inlet Channel	Launder	Sludge Drain	Plant Level Tank	Exit Channel	Influent Sed Manifold	Lamella	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Inlet Channel	Launder	Sludge Drain	Plant Level Tank	Exit Channel	Influent Sed Manifold	Lamella		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
+							0	22	0	0	24	0	0	7	0	0	0	0	0	11	0	0	0	0			10	0	0	9	0	0	0	0	0	8	0							0	19							0	
+acad	version			acad.version	the version of autocad that the drawing code is written for			1																																													
+sedlayout				sedlayout.																																																	
+Q	Plant			Q.Plant	Plant flow rate			1																			1			1																							
+W	Sed	Single		W.SedSingle	The width of a singlewidth sed tank-- also the width of the lamella material			1												1																																	
+EN	Pipe	Spec		EN.PipeSpec	enumerated type			1																																													
+EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English)"			1																																													
+					number indicating which sed layout will draw - important for the channel/entrance tank placement			1																																													
+T	Floc	Baffle		T.FlocBaffle	Thickness of the flocculator baffle material			1																																													
+T	Plant	Wall		T.PlantWall	Thickness of sed and floc tank walls 			1																																													
+T	Plt	Wall		T.PltWall	Thickness of  leveling tank walls			1																																													
+T	Ap			T.Ap	Thickness of Alum Platform			1																																													
+T	Cp			T.Cp	Thickness of Chlorine Platform			1																																													
+T	Et			T.Et	Thickness of Entrance Tank Walls			1																																													
+T	Mp			T.Mp	Thickness of Main Platform			1																																												
+T	Channel	Wall		T.ChannelWall	Thickness of Channel Wall			1																																												
+W	Mp	Walkway		W.MpWalkway	Thickness of Walkway on Main Platform			1																																												
+C	Fcm	Dose	Max	C.FcmDoseMax	Max concentration dose of flow control module			1																			1																									
+C	Fcm	Alum		C.FcmAlum	concentration of alum in the stock tank			1																			1																									
+EN	Fcm	Tube		EN.FcmTube	enumerated type for metric or english tubes			1																																												
+Ti	Stock	Min		Ti.StockMin	Drainage time for the alum stock tank?			1																			1																									
+Q	Fcm	Max		Q.FcmMax	Maximum flow rate through the floc control module						1																																									
+Vol	Stock			Vol.Stock	Volume of the stock tank in the floc control module						1																																									
+Q	Fcm	Valve	Max	Q.FcmValveMax	Maximum flow rate that can be handled by the FCM valve						1																																									
+D	Fcm	Valve	Orifice	D.FcmValveOrifice	Diameter of the valve in the FCM																						1																									
+HL	Fcm	Inlet	Design	HL.FcmInletDesign																							1																									
+N	Fcm			N.Fcm	Number of flow control modules						1																																									
+L	Fcm	Tube	Min	L.FcmTubeMin	Minimum tube length for the flow control module						1																																									
+HL	Fcm	Tube		HL.FcmTube	Maximum head loss through the flow control module																						1																									
+D	Fcm	Tube	Available	D.FcmTubeAvailable	Diameter of available tubes for the flow control module						1																																									
+MW	Al			MW.Al	Molecular weight of aluminum						1																																									
+MW	S			MW.S	Molecular weight of sodium						1																																									
+MW	O			MW.O	Molecular weight of oxygen						1																																									
+MW	H			MW.H	Molecular weight of hydrogen						1																																									
+MW	Al203			MW.Al203	Molecular weight of aluminum hydroxide						1																																									
+MW	Alum			MW.Alum	Molecular weight of alum coagulant						1																																									
+Mu	Alum	Slope		Mu.AlumSlope	Dynamic viscosity of alum coagulant						1																																									
+Nu	Fcm	Alum		Nu.FcmAlum	Kinematic viscosity of the alum coagulant in the flow control module						1																																									
+Q	Fcm	Max	Laminar	Q.FcmMaxLaminar	Maximum flow rate through the floc control module to maintain laminar flow						1																																									
+L	Fcm	Tube	Max	L.FcmTubeMax	Maximum length of tube allowed for the flow control module																						1																									
+Re	Pipe	Transition		Re.PipeTransition	Reynolds number for transition from laminar to turbulent flow in a pipe																						1																									
+D	Fcm	Tube	Max	D.FcmTubeMax	Maximum diameter of tube allowed for the flow control module						1																																									
+N	Fcm	Tube		N.FcmTube	Number of tubes required for the flow control module						1																																									
+Q	Fcm	Tube	Max	Q.FcmTubeMax	Maximum flow rate through the FCM tube allowed						1																																									
+HL	Fcm	Valve		HL.FcmValve	Head loss due to flow control module valve						1																																									
+Pi	VenaContracta	Orifice		Pi.VenaContractaOrifice																1							1																									
+D	Fcm	Tube	Laminar	D.FcmTubeLaminar	Minimum tube diameter for the FCM to maintain laminar flow						1																																									
+D	Fcm	Tube	MinHeadloss	D.FcmTubeMinHeadloss	Minimum tube diameter for the FCM to produce the desired head loss at maximum flow						1																																									
+D	Fcm	Tube	Min	D.FcmTubeMin	Minimum diameter of the FCM tube required						1																																									
+ID	Fcm	Tube		ID.FcmTube	Inner diameter of the FCM tube						1																																									
+L	Fcm	Tube		L.FcmTube	Length of tube for the flow control module						1																																									
+W	Sed	Inlet		W.SedInlet	Width of the inside of the sed slope																															1																
+Pi	Flow			Pi.Flow	Ratio of flow rate through the last orifice to the first			1												1																																
+AN	Sed	Bottom	Inlet	AN.SedBottomInlet	Angle of the bottom of the sed slope			1												1																																
+W	Sed	Sludge	Flat	W.SedSludgeFlat	The width of the sed sludge drain (distance between bottom of two slopes			1												1																																
+Q	Sed	Slope	Port	Q.SedSlopePort	Flow through the sed inlet port																															1																
+V	Sed	Up	Bod	V.SedUpBod	Velocity up through the sed tank																															1																
+W	Sed	Slope	Plate	W.SedSlopePlate	Width of one of the slope plates															1																																
+Pi	Sed	Cell		Pi.SedCell																1																																
+K	Pipe	Ent		K.PipeEnt	Minor loss coefficient for water entering a pipe from a tank															1																																
+ED	Floc	Large		ED.FlocLarge	Engery dissipation rate for large flocs															1																																
+B	Sed	Port		B.SedPort	Height of a port																															1																
+AN	Sed	Top	Inlet	AN.SedTopInlet	Angle of the sed slope															1																																
+W	Sed	Port		W.SedPort	Width of a port																															1																
+A	Sed	Port		A.SedPort	Area of a sed port that is increased due to the vena contracta																															1																
+L	Sed	Port		L.SedPort	The adjusted cut length due to the angle of the slope																															1																
+A	Sed	Manifold		A.SedManifold	Cross sectional area of the slope manifold																															1																
+L	Sed			L.Sed	Length of one sed tank															1																																
+Pi	Sed	Area		Pi.SedArea																																																
+A	Et			A.Et	Area of the entrance tank									1																																						
+V	Up	Et		V.UpEt	Upflow velocity in the entrance tank required for proper aeration in the grit chamber																									1																						
+W	Et			W.Et	Width of the entrance tank									1																																						
+W	Floc	Channel		W.FlocChannel	Width of a single floc channel																									1																						
+L	Et			L.Et	Length of the entrance tank									1																																						
+L	Sed			L.Sed	Length of the sedimentation tank																									1																						
+L	Grit			L.Grit	Length of the grit chamber									1																																						
+HL	Et	Floc		HL.EtFloc																																																
+ZW	Et			ZW.Et	Water depth in the entrance tank relative to the bottom of the sed tank									1																																						
+HW	Floc	Start		HW.FlocStart																										1																						
+HL	Lfom			HL.Lfom	Head loss due to linear flow orifice meter																									1																						
+H	Lfom	Freefall		H.LfomFreefall	Head loss due to free fall through the linear flow orifice meter																									1																						
+HW	Et	Max		HW.EtMax	Maximum head loss through the entrance tank									1																																						
+HW	Et	Min		HW.EtMin	Minimum head loss through the entrance tank																									1																						
+H	Et			H.Et	Height of the entrance tank									1																																						
+H	Plant	Freeboard		H.PlantFreeboard	Freeboard for the plant																									1																						
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																																				
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
+																																													
