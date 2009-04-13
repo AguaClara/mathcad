@@ -1,6 +1,6 @@
 3													Program Outputs																	Program Inputs													Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	array	Returned to LabVIEW	User	BOD	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Inlet Channel	Launder	Sludge Drain	Plant Level Tank	Exit Channel	Influent Sed Manifold	Lamella	Floc Hopper	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Inlet Channel	Launder	Sludge Drain	Plant Level Tank	Exit Channel	Influent Sed Manifold	Lamella	Floc Hopper		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									60	18	109	22	24	21	4	6	5	8	9	0	13	16	14	6	0	0	0			10	15	8	10	14	13	13	0	22	18	11	10		0	0	0	0	0	0	105		0	0	0	0	0	0	
+									60	18	109	22	24	21	4	6	5	8	9	0	13	17	14	6	0	0	0			10	15	8	10	14	13	13	0	22	18	11	10		0	0	0	0	0	0	105		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank											1																																									
 A	Floc	Hopper		A.FlocHopper	Cross sectional area of the floc hopper				1															1																																	
 A	Floc	Port		A.FlocPort	Area of the floc port									1																																											
@@ -31,6 +31,7 @@ C	d			C.d																																					1
 C	Fcm	Alum		C.FcmAlum	concentration of alum in the stock tank					1																				1																										
 C	Fcm	Dose	Max	C.FcmDoseMax	Max concentration dose of flow control module					1	1																			1																										
 Cd	Plt	Weir		Cd.PltWeir	Weir coefficient						1																											1																		
+CP	Floc			CP.Floc							1																				1																									
 D	Drill			D.Drill							1																								1	1		1																		
 D	Drill	Eng		D.DrillEng	Diameter for drill bits in English units						1																																													
 D	Drill	Met		D.DrillMet	Diameter for drill bits in metric units						1																																													
@@ -45,7 +46,7 @@ D	Fcm	Valve	Orifice	D.FcmValveOrifice	Diameter of the valve in the FCM						1			
 D	Plt	Weir	Estimated	D.PltWeirEstimated																	1																																			
 D	Sed	Launder	Orifice	D.SedLaunderOrifice	Diameter of the sed tank launder orifice				1												1																																			
 D	Sed	Launder	OrificeEst	D.SedLaunderOrificeEst	Estimated diameter of launder orifice													1																																						
-D	Sed	Sludge	Orifice	D.SedSludgeOrifice	Diameter of sludge drain orifice				1										1																																					
+D	Sed	Sludge	Orifice	D.SedSludgeOrifice	Diameter of sludge drain orifice				1										1																																						
 Del	Plt	Weir	H	Del.PltWeirH																	1																																				
 E	Concrete			E.Concrete	Pipe roughness for flow through a concrete channel						1																												1																		
 E	Pvc			E.Pvc	Roughness coefficient for flow through PVC pipe						1																								1	1		1																			
@@ -61,7 +62,7 @@ H	Et			H.Et	Height of the entrance tank				1							1
 H	Exit	Channel		H.ExitChannel	Height of the exit channel				1												1																																				
 H	Floc			H.Floc										1																																											
 H	Floc	Inlet	Pipe	H.FlocInletPipe	Height of the inlet pipe to the flocculator above the floor of the sed tank						1																																														
-H	Floc	Overlap	Min	H.FlocOverlapMin	Minimum overlap between adjacent baffles to prevent short circuiting				1		1																																														
+H	Floc	Overlap	Min	H.FlocOverlapMin	Minimum overlap between adjacent baffles to prevent short circuiting				1		1																																													
 H	Floc	Port		H.FlocPort										1																																										
 H	Inlet	Channel		H.InletChannel	Height of the inlet channel				1								1																					1																		
 H	Lfom	Freefall		H.LfomFreefall	Difference between the height of the water in floc tank and the bottom set of holes on the lfom						1																						1																							
@@ -106,6 +107,7 @@ HW	Sed			HW.Sed	Water depth in the sed tank				1																						1	1		1		1	
 ID	Fcm	Tube		ID.FcmTube	Inner diameter of the FCM tube								1																																											
 ID	Fcm	Tube	English	ID.FcmTubeEnglish	Inner diameter for fcm tube in English units						1																																													
 ID	Fcm	Tube	Metric	ID.FcmTubeMetric	Inner diameter for fcm tube in metric units						1																																													
+ID	Sed	Sludge		ID.SedSludge																																																				
 K	90			K.90	Loss coefficient for the channel transition in a 90 degree turn							1																																												
 K	Angle	Valve		K.AngleValve	Minor loss coefficient for flow through an angle valve							1																																												
 K	Chk	Valve	Ball	K.ChkValveBall								1																																												
@@ -141,8 +143,8 @@ L	Floc	Baffles		L.FlocBaffles										1
 L	Floc	Baffle	Upper	L.FlocBaffleUpper	Length of the upper floc baffles				1					1																																										
 L	Floc	Hopper		L.FlocHopper	Length of the floc hopper				1															1																																
 L	Floc	Hopper	Offset	L.FlocHopperOffset	Distance from the edge of the channel to the bottom of the first lamella				1															1																																
-L	Flock	Tank		L.FlockTank	Total length of floc tanks																																																			
-L	Floc	Sections		L.FlocSections	Length of the floc baffle section									1																																										
+L	Floc	Sections		L.FlocSections	Length of the floc baffle section (3x1 matrix)									1																																										
+L	Floc	Tank		L.FlocTank	Total length of floc tanks																																																			
 L	Floc	Tanks	Est	L.FlocTanksEst	Estimated length of the floc tank									1																																										
 L	Grit			L.Grit	Length of the grit chamber				1							1																																								
 L	Lfom			L.Lfom												1																																								
@@ -159,6 +161,7 @@ L	Sed	Manifold	Entrance	L.SedManifoldEntrance	Length of drop chimneys connecting
 L	Sed	Max		L.SedMax	Maximum length of the sedimentation tank																	1																																		
 L	Sed	Plate		L.SedPlate	Length of the plate settlers				1														1																		1															
 L	Sed	Port		L.SedPort	The adjusted cut length due to the angle of the slope				1													1																																		
+L	Sed	Slope	Manifold	L.SedSlopeManifold	Length of the concrete plate creating the top of the inlet manifold																	1																																		
 L	Sed	Total		L.SedTotal	Total legth of a single valley sed tank (placed end to end)																	1																																		
 Loc	Floc	Baffles		Loc.FlocBaffles	xyz coordinates of floc baffles used for drawing plant									1																																										
 Mu	Alum	Slope		Mu.AlumSlope	Dynamic viscosity of alum coagulant								1																																											
@@ -170,9 +173,6 @@ MW	H			MW.H	Molecular weight of hydrogen								1
 MW	O			MW.O	Molecular weight of oxygen								1																																											
 MW	S			MW.S	Molecular weight of sodium								1																																											
 N	Baffle			N.Baffle							1																																													
-N	Sed	Bays		N.SedBays	Number of slopes per cell sed tank				1													1														1		1			1															
-N	Sed	Bays	Est	N.SedBaysEst	Calculated number of slopes per cell sed tank																	1																																		
-N	Sed	Bays	Min	N.SedBaysMin	Minimum number of slopes per cell sed tank defined by user					1																													1																	
 N	El	Launder		N.ElLaunder	Number of elbows in launder design						1																																													
 N	Fcm			N.Fcm	Number of flow control modules								1																																											
 N	Fcm	Tube		N.FcmTube	Number of tubes required for the flow control module								1																																											
@@ -184,6 +184,9 @@ N	Lfom			N.Lfom							1
 N	Lfom	Orifices	Firstrow	N.LfomOrificesFirstrow	Number of orifices in the first row of the lfom						1																																													
 N	Rm	El		N.RmEl	Number of elbows in rapid mix						1																																													
 N	Rm	Tee		N.RmTee	Number of tees in the rapid mix chamber						1																																													
+N	Sed	Bays		N.SedBays	Number of slopes per cell sed tank				1													1														1		1			1															
+N	Sed	Bays	Est	N.SedBaysEst	Calculated number of slopes per cell sed tank																	1																																		
+N	Sed	Bays	Min	N.SedBaysMin	Minimum number of slopes per cell sed tank defined by user					1																													1																	
 N	Sed	Cells	Proposed	N.SedCellsProposed																		1																																		
 N	Sed	Inlet	Pipes	N.SedInletPipes	Number of pipes entering each slope pair				1		1																																													
 N	Sed	Inlet	Slopes	N.SedInletSlopes	Number of inlet slopes in each sed tank				1		1																																													
@@ -210,7 +213,6 @@ Phi	FB	500NTU		Phi.FB500NTU							1																														1
 Pi	Epsilon			Pi.Epsilon							1																				1																									
 Pi	Floc	Baffle		Pi.FlocBaffle	Ratio of the baffle spacing to the distance between the bottom of a baffle and bottom of the tank						1																				1																									
 Pi	Floc	Baffle	CP	Pi.FlocBaffleCP																											1																									
-CP	Floc			CP.Floc							1																				1																									
 Pi	Floc	Dissipation		Pi.FlocDissipation	ratio of energy dissipation zone						1																				1			1					1																	
 Pi	Flow	Manifold		Pi.FlowManifold	Ratio of flow rate through the last port to the first in the manifold						1																												1																	
 Pi	Launder			Pi.Launder	"Ratio of the flow between the launders, the long path flow divided by the short path flow"						1																																													
@@ -220,8 +222,8 @@ Pi	Lfom	Orifice	Area	Pi.LfomOrificeArea	Ratio of lfom pipe area to orifice area	
 Pi	Plt	Weir		Pi.PltWeir	Ratio between the maximum water depth above the weir and the diameter of the weir						1																											1																		
 Pi	Q	Launder	Orifices	Pi.QLaunderOrifices	Ratio of the flow between the orifices within the launder (farthest orifice over the closest orifice)						1																								1			1																		
 Pi	Q	Plant		Pi.QPlant	Ratio between the max and min design flow rates						1																																													
-Pi	Q	Sludge	Orifices	Pi.QSludgeOrifices	Ratio of the flow between the sludge orifices						1																									1																				
-Pi	Sed	Above	W	Pi.SedAboveW	Ratio between the depth of the water between the top of the plate settlers and the effluent launders and the spacing between the effluent launders						1																																													
+Pi	Q	Sludge	Orifices	Pi.QSludgeOrifices	Ratio of the flow between the sludge orifices						1																									1																					
+Pi	Sed	Above	W	Pi.SedAboveW	Ratio between the depth of the water between the top of the plate settlers and the effluent launders and the spacing between the effluent launders						1																																														
 Pi	Sed	Area		Pi.SedArea																																																					
 Pi	Sed	Cell		Pi.SedCell	Length scale where all of the kinetic energy contained in the flow will be dissipated 						1																												1																		
 Pi	Sed	Port		Pi.SedPort	Length of the sed tank served by one port divided by the port width						1																																														
@@ -235,9 +237,9 @@ Q	Fcm	Valve	Max	Q.FcmValveMax	Maximum flow rate that can be handled by the FCM v
 Q	Flocs			Q.Flocs																				1																																	
 Q	Plant			Q.Plant	Plant flow rate				1	1																				1	1		1	1				1	1																		
 Q	Sed			Q.Sed	Flow through the sed tank																	1													1			1		1	1																
+Q	Sed	Bay		Q.SedBay	Flow rate through one sedimentation tank bay																																																				
 Q	Sed	Launder	Orifices	Q.SedLaunderOrifices	Flow rate through the orifice of the sed tank launder													1																				1																			
 Q	Sed	Manifold		Q.SedManifold	Flow rate through the inlet manifold of the sed tank																	1												1																							
-Q	Sed	Bay		Q.SedBay	Flow rate through one sedimentation tank bay																																																				
 Q	Sed	Slope	Port	Q.SedSlopePort	Flow through the sed inlet port																	1																																			
 Q	Sludge	Drain	Initial	Q.SludgeDrainInitial	Initial flow rate through the sludge drain														1																																						
 Re	Pipe	Transition		Re.PipeTransition	Reynolds number for transition from laminar to turbulent flow in a pipe						1																			1																											
@@ -252,13 +254,13 @@ S	Floc	Port		S.FlocPort	Extra space around ports for water making a u-turn (spac
 S	Plt			S.Plt	Space for concrete between inlet pipes						1																																														
 S	Sed	Plate		S.SedPlate	Space between lamella				1														1																																		
 sedlayout				sedlayout.							1																																														
-T	Ap			T.Ap	Thickness of Alum Platform					1	1																																														
-T	Channel	Wall		T.ChannelWall	Thickness of a channel wall					1	1																							1	1			1	1	1	1																
+T	Ap			T.Ap	Thickness of Alum Platform					1	1																																													
+T	Channel	Wall		T.ChannelWall	Thickness of a channel wall					1	1																							1	1			1	1	1	1															
 T	Cp			T.Cp	Thickness of Chlorine Platform					1	1																																													
 T	Et			T.Et	Thickness of Entrance Tank Walls					1																																														
 T	Et	Wall		T.EtWall	Thickness of the entrance tank wall						1																																													
 T	Floc	Baffle		T.FlocBaffle	Thickness of the flocculator baffle material					1	1																				1																									
-T	Mp			T.Mp	Thickness of Main Platform					1																																														
+T	Mp			T.Mp	Thickness of Main Platform; Same as thickness of plant wall					1																																														
 T	Plant	Wall		T.PlantWall	Thickness of sed and floc tank walls 					1																								1				1																		
 T	Plt	Wall		T.PltWall	Thickness of  leveling tank walls					1	1																																													
 T	Sed	Inlet	Slope	T.SedInletSlope	Thickness of the sedimentation slope material						1																					1				1			1																	
@@ -267,8 +269,8 @@ T	Sed	Plate		T.SedPlate	Thickness of the plate settlers						1																		
 T	Sed	Sludge		T.SedSludge															1													1																								
 Ti	Floc			Ti.Floc										1																																										
 Ti	Sludge	Drain		Ti.SludgeDrain	Time for sludge drain to drain						1																									1																				
-Ti	Stock	Min		Ti.StockMin	Drainage time for the alum stock tank?					1																				1																										
 Ti	Sludge	Drain		Ti.SludgeDrain	Drainage time for the sedimentation tank						1																																													
+Ti	Stock	Min		Ti.StockMin	Drainage time for the alum stock tank?					1																				1																										
 V	Sed	C		V.SedC																			1																																	
 V	Sed	C	Bod	V.SedCBod	Critical velocity for particles to settle in plate settlers						1																													1																
 V	Sed	Up		V.SedUp																			1																																	
@@ -284,8 +286,8 @@ W	Ap	Walkway		W.ApWalkway	Extra width for the alum platform walkway						1
 W	Channel	G		W.ChannelG	Width of the inlet channel based on energy dissipation												1																																							
 W	Cp	Walkway		W.CpWalkway	Extra width for chemical platform walkway						1																																													
 W	Et			W.Et	Width of the entrance tank				1							1																																								
-W	Exit	Channel		W.ExitChannel	Width of the exit channel				1												1																			1																
-W	Floc	Channel		W.FlocChannel	Width of a single floc channel				1					1																			1																							
+W	Exit	Channel		W.ExitChannel	Width of the exit channel				1												1																			1																	
+W	Floc	Channel		W.FlocChannel	Width of a single floc channel				1					1																			1																								
 W	Floc	Channel	Min	W.FlocChannelMin	Minimum width for a floc channel						1																				1																										
 W	Floc	Hopper		W.FlocHopper	Width of the floc hopper				1															1																																	
 W	Floc	Port		W.FlocPort	Width of the floc port									1																																											
@@ -294,14 +296,18 @@ W	Mp	Column		W.MpColumn	Width of the main platform column						1
 W	Mp	Walkway		W.MpWalkway	Thickness of Walkway on Main Platform					1																																															
 W	Sed			W.Sed	"Width of a single sed tank, incl. width of dividing walls"				1													1												1				1		1																	
 W	Sed	Bay		W.SedBay	The width of a singlewidth sed tank-- also the width of the lamella material				1	1																										1			1		1																
+W	Sed	Drain	Cover	W.SedDrainCover	Width of the drain cover for the sludge drain in the sed tank				1										1																																						
 W	Sed	Inlet		W.SedInlet	Width of the inside of the sed slope																	1										1		1																							
 W	Sed	Manifold	Entrance	W.SedManifoldEntrance	Width of drop chimneys connecting channel to sed inlet manifolds				1								1																																								
 W	Sed	Port		W.SedPort	Width of a port				1													1																																			
 W	Sed	Slope	Plate	W.SedSlopePlate	Width of one of the slope plates				1		1																									1			1																		
-W	Sed	Sludge		W.SedSludge	Width of the sludge drain				1										1																																						
-W	Sed	Sludge	Flat	W.SedSludgeFlat	The width of the sed sludge drain (distance between bottom of two slopes				1		1																					1							1																		
-X	Floc	Baffle		X.FlocBaffle				1			1																																														
-X	Floc	Baffles		X.FlocBaffles				1						1																																											
+W	Sed	SlopePlate	Remaining	W.SedSlopePlateRemaining	"Width of the extra distance left between the last slope plate and the wall of the tank, to be filled by a fraction of a sed slope plate"				1													1																																			
+W	Sed	Sludge		W.SedSludge	Width of the sludge drain				1										1																																					
+W	Sed	Sludge	Flat	W.SedSludgeFlat	The width of the sed sludge drain (distance between bottom of two slopes				1		1																					1							1																	
+W	Sed	Sludge	Min	W.SedSludgeMin	The minimum width of the sludge drain 																																																			
+W	Sed	Sludge	SF	W.SedSludgeSF	Safety factor width for the sludge drain cover extending beneath the sed slope to prevent breaking						1																									1																				
+X	Floc	Baffle		X.FlocBaffle				1			1																																													
+X	Floc	Baffles		X.FlocBaffles				1						1																																										
 Y	Floc	Baffle		Y.FlocBaffle				1			1																																													
 Y	Sed	Plate		Y.SedPlate				1			1																																													
 Z	Floc	Baffles		Z.FlocBaffles				1						1																																										
