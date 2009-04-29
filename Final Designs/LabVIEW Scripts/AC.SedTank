@@ -63,6 +63,28 @@ _box 0,1.0045,0 -9.52822,1.1545,1.54809
   
 -layer f sedbaydivider
   
+-layer m inletchimney
+c t 0,255,255
+inletchimney
+  
+_-view o t
+_zoom w -0.01,0.01 1.0353,-0.41606
+_box 0,0,0 0.9745,-0.35526,0.94662
+_box 0,0,0 1.0253,-0.40606,0.94662
+_subtract 1.0253,-0.40606,0.94662  0.9745,-0.35526,0.94662 
+_-view o r
+_pline 0,0.53597 0,0 -0.34101,0 0,0.53597 
+_extrude 0,0,1.48259  0.0508
+_-view o t
+_move 0,0,0.53597  0,0,0.53597 @0.9745,0,0
+_subtract 0.9745,-0.35526,0.94662  0.9745,0,0 
+_mirror3d 0.9745,-0.35526,0.94662  zx 0.9745,-0.50225,0.94662 n
+_move all  0.9745,-0.35526,0.94662 -8.55372,1.80374,1.10254
+-array ALL  r 2 1 -1.1545
+-layer s 0
+  
+-layer f inletchimney
+  
 _-view _top
 -layer m slopes
 c t 125,0,160
@@ -142,6 +164,15 @@ _-view o t
   
 -layer f draincover
   
+-layer m lamina
+c t 127,0,255
+lamina
+  
+_-view o t _zoom w -1.2385,-0.01,1.53809 -1.2155,2.169,1.96449 _box -1.2285,0,1.54809 -1.2255,2.159,1.95449 _rotate3d -1.2285,0,1.54809  y -1.2285,0,1.54809 30 -array -1.2285,0,1.54809  R 1 299 -0.02309
+-layer s 0
+  
+-layer f lamina
+  
 -layer t tank
   
 -layer t channel
@@ -157,6 +188,8 @@ _-view o t
 -layer t slopes
   
 -layer t sedbaydivider
+  
+-layer t lamina
   
 _-view o t
 -array ALL  r 3 1 2.309
@@ -175,6 +208,8 @@ _-view o t
 -layer f slopes
   
 -layer f sedbaydivider
+  
+-layer f lamina
   
 _union all 
 -layer s 0
@@ -319,14 +354,4 @@ _box 0.15,6.887,1.54809 -9.37822,6.927,1.61809
 -layer f framewall
   
 -layer f tank
-  
--layer m lamina
-c t 127,0,255
-lamina
-  
-_-view o t _zoom w -1.0353,-0.01,1.60809 -1.0123,2.169,2.03449 _box -1.0253,0,1.61809 -1.0223,2.159,2.02449 _rotate3d -1.0253,0,1.61809  y -1.0253,0,1.61809 30 -array -1.0253,0,1.61809  R 1 200 -0.02309
--array all  R 3 1 2.159
--layer s 0
-  
--layer f lamina
   
