@@ -1,0 +1,384 @@
+_-view o t
+-layer m tank
+c t 132,132,132
+tank
+  
+_-view o t _zoom w 0.16,-0.16,0 -9.68822,2.319,1.76127 _box 0,0,0 -9.52822,2.159,1.76127 _box 0.15,-0.15,-0.15 -9.67822,2.309,1.76127 _subtract 0.15,-0.15,-0.15  0,0,0 
+-layer s 0
+  
+-layer f tank
+  
+-layer m echannel
+c t 214,214,214
+echannel
+  
+_-view o t _zoom w 0,-0.3,0.78597 2.459,0.8753,0.78597 _box 0,-0.15,0.78597 2.459,0.7253,1.76127 _box 0,-0.3,0.63597 2.459,0.8753,1.76127 _subtract 0,0.8753  -0.01,-0.31 2.469,0.8853 
+_rotate 0,-0.15,0.78597  0,-0.15,0.78597 90
+_union all 
+-layer s 0
+  
+-layer f echannel
+  
+-layer m channel
+c t 214,214,214
+channel
+  
+_-view o t _zoom w -8.65292,-0.3,0.78597 -6.19392,0.8753,0.78597 _box -8.65292,-0.15,0.78597 -6.19392,0.7253,1.76127 _box -8.65292,-0.3,0.63597 -6.19392,0.8753,1.76127 _subtract -8.65292,0.8753  -8.66292,-0.31 -6.18392,0.8853 
+_rotate -8.65292,-0.15,0.78597  -8.65292,-0.15,0.78597 90
+_union all 
+-layer s 0
+  
+-layer f channel
+  
+-layer m bottomslopes
+c t 214,214,214
+bottomslopes
+  
+_zoom w -0.01,-0.01,-0.01 1.0145,0.16592,9.53822
+_pline 0.40606,0.15592 0,0.15592 0,0.22752 0.40606,0.15592 
+_extrude 0.40606,0.15592,0  9.52822
+_mirror3d 0.40606,0.15592,0  yz 0.50225,0.15592,0 n
+_box 0,0,0 1.0045,0.15592,9.52822
+_box 0.42097,0,0 0.58353,0.08128,9.52822
+_box 0.40606,0.08128,0 0.59844,0.15592,9.52822
+_subtract 0,0,0  0.42097,0,0 
+_subtract 0,0,0  0.40606,0.08128,0 
+_union all 
+_rotate3d 0,0,0  x 0,0,0 90
+_rotate3d 0,0,0  z 0,0,0 270
+_move all  0,0,0 0,2.159,0
+-array ALL  r 2 1 -1.1545
+-layer s 0
+  
+-layer f bottomslopes
+  
+-layer m sedbaydivider
+c t 132,132,132
+sedbaydivider
+  
+_-view o t
+_box 0,1.0045,0 -9.52822,1.1545,0.95036
+-array ALL  r 1 1 -1.1545
+-layer s 0
+  
+-layer f sedbaydivider
+  
+-layer m inletchimney
+c t 0,255,255
+inletchimney
+  
+_-view o t
+_zoom w -0.01,0.01 1.0353,-0.41606
+_box 0,0,0 0.9745,-0.35526,0.48004
+_box 0,0,0 1.0253,-0.40606,0.48004
+_subtract 1.0253,-0.40606,0.48004  0.9745,-0.35526,0.48004 
+_-view o r
+_pline 0,0.53597 0,0 -0.34101,0 0,0.53597 
+_extrude 0,0,1.01601  0.0508
+_-view o t
+_move 0,0,0.53597  0,0,0.53597 @0.9745,0,0
+_subtract 0.9745,-0.35526,0.48004  0.9745,0,0 
+_mirror3d 0.9745,-0.35526,0.48004  zx 0.9745,-0.50225,0.48004 n
+_move all  0.9745,-0.35526,0.48004 -8.55372,1.80374,0.63597
+-array ALL  r 2 1 -1.1545
+-layer s 0
+  
+-layer f inletchimney
+  
+_-view o t
+-layer m slopes
+c t 125,0,160
+slopes
+  
+-layer s slopes
+  
+_box 0,0,0 0.3,0.88522,0.04
+_box 0.3,0,0 0.24095,0.06818,0.04
+_subtract 0,0,0  0.3,0,0 
+_-view o f
+-array 0,0,0  R 1 28 0.3
+-block SedSloeps
+0,0,0 all 
+-insert SedSloeps
+0,0,0 
+ 
+_-view o r
+_rotate3d 0,0,0  z 0,0,0 60
+_mirror3d 0,0,0  yz -0.05964,-0.05964,-0.05964 n
+_-view o t
+_move 0,0,0  0,0,0 @0.15,0,0
+_-view o l
+_rectangle 0,0 2.159,1.76127
+_-view o t
+_move 0,0,0  0,0,0 @0.15,0,0
+_explode 0,-0.15,0 
+_slice 0,-0.15,0  o 0.15,0,0 b
+_erase 0.15,-1.0795,0 
+_move 0,-0.15,0  0,0,0 @8.4,0,0
+-block SedSlopesTot
+0,0,0 all 
+-insert SedSlopesTot
+0,0,0 
+ 
+_move 0.3,0,0  0.15,0.05964,0 @-8.65292,0.56344,0.13592
+-array ALL  r 2 1 1.1545
+-layer s 0
+  
+-layer f slopes
+  
+_-view o t
+-layer m draincover
+c t 255,0,0
+draincover
+  
+_box 0,0.40606,0.08128 -9.52822,0.59844,0.15592
+-layer s 0
+  
+-layer f draincover
+  
+_-view o t
+-layer s 0
+  
+_cylinder -9.37822,0.50225,0.08128 0.00635 0.07464
+_-view o t
+-array all  R 1 63 0.15
+_union all 
+-layer t draincover
+  
+_-view o t
+_subtract 0,0.40606,0.08128  -9.37187,0.50225,0.08128 
+_-view o r
+-layer s draincover
+  
+_pline 0.57344,0.15592 0.56344,0.13592 0.5288,0.15592 0.57344,0.15592 
+_pline 0.43106,0.15592 0.44106,0.13592 0.4757,0.15592 0.43106,0.15592 
+_extrude 0.56344,0.13592  -9.52822
+_extrude 0.44106,0.13592  -9.52822
+-layer s 0
+  
+_subtract 0.40606,0.15592  0.56344,0.13592 
+_subtract 0.40606,0.15592  0.44106,0.13592 
+_-view o t
+-array ALL  r 2 1 1.1545
+-layer s 0
+  
+-layer f draincover
+  
+-layer m lamina
+c t 127,0,255
+lamina
+  
+_-view o t _zoom w -1.24196,-0.01,1.03688 -1.21896,2.169,1.46328 _box -1.23196,0,1.04688 -1.22896,2.159,1.45328 _rotate3d -1.23196,0,1.04688  y -1.23196,0,1.04688 30 -array -1.23196,0,1.04688  R 1 299 -0.02445
+-block laminablock
+-1.23196,0,1.04688 all 
+-insert laminablock
+-1.23196,0,1.04688 
+ 
+-layer s 0
+  
+-layer f lamina
+  
+-layer m pipeframe
+c t 255,255,0
+pipeframe
+  
+_-view o f
+_cylinder -1.3253,1.04449,0 0.02413 -2.159
+_-view o t
+-array all  R 1 24 -0.3
+_-view o r
+_cylinder 0.3,1.09275,-1.0253 0.02413 -7.47762
+-array 0.27587,1.09275,-1.0253  R 1 6 0.3
+_union all 
+-layer s 0
+  
+-layer f pipeframe
+  
+-layer t tank
+  
+-layer t channel
+  
+-layer t echannel
+  
+-layer t bottomslopes
+  
+-layer t inletchimney
+  
+-layer t draincover
+  
+-layer t slopes
+  
+-layer t sedbaydivider
+  
+-layer t lamina
+  
+-layer t pipeframe
+  
+-layer t launder
+  
+_-view o t
+-array ALL  r 3 1 2.309
+-layer f tank
+  
+-layer f channel
+  
+-layer f echannel
+  
+-layer f bottomslopes
+  
+-layer f inletchimney
+  
+-layer f draincover
+  
+-layer f slopes
+  
+-layer f sedbaydivider
+  
+-layer f lamina
+  
+-layer f pipeframe
+  
+-layer f launder
+  
+_union all 
+-layer s 0
+  
+-layer t channel
+  
+_union all 
+-layer s 0
+  
+-layer f channel
+  
+-layer t echannel
+  
+_union all 
+-layer s 0
+  
+-layer f echannel
+  
+-layer t tank
+  
+_-view o t
+_union all 
+_box -9.52822,-0.15,0.78597 -8.65292,6.927,1.76127
+_subtract 0,0,0  -9.52822,-0.15,0.78597 
+_box -0.8753,-0.15,0.78597 0,6.777,1.76127
+_subtract 0.15,0,0  -0.8753,-0.15,0.78597 
+-layer s 0
+  
+-layer f tank
+  
+_-view o t
+-layer m ichanneltank
+c t 214,214,214
+ichanneltank
+  
+_-view o t _zoom w -8.49292,-0.79862,0 -9.59043,0.01,1.76127 _box -8.65292,-0.63862,0 -9.43043,-0.15,1.76127 _box -8.50292,-0.78862,-0.15 -9.58043,0,1.76127 _subtract -8.50292,-0.78862,-0.15  -8.65292,-0.63862,0 
+_box -8.65292,-0.63862,0 -9.43043,-0.15,0.72751
+_union all 
+_box -9.52822,-0.15,0.78597 -8.65292,6.927,1.76127
+_subtract -8.65292,-0.63862,0  -9.52822,-0.15,0.78597 
+-layer s 0
+  
+-layer f ichanneltank
+  
+-layer m inletweirelbow
+c t 0,255,0
+inletweirelbow
+  
+_-view o t _zoom w -9.48822,-1.05582,0.65151 -8.1652,0.2672,0.65151 _torus -8.82671,-0.39431,0.65151 0.4572 0.16192 _box -9.47822,-1.04582,0.41359 -8.82671,0.2572,0.88944 _subtract -8.20759,-0.39431,0.65151  -8.82671,-0.39431,0.65151 
+_torus -8.82671,-0.39431,0.65151 0.4572 0.13652 _subtract -8.20759,-0.39431,0.65151  -9.42044,-0.39431,0.65151  _box -8.82671,-1.02343,0.4572 -8.19759,-0.39431,0.84582 _subtract -8.82671,0.06289,0.65151  -8.82671,-0.39431,0.65151 
+_cylinder -8.82671,0.06289,0.65151 0.19431 a -8.90271,0.06289,0.65151 _cylinder -8.82671,0.06289,0.65151 0.16192 a -8.90271,0.06289,0.65151 _subtract -8.82671,-0.13142,0.65151  -8.91271,-0.09903,0.65151 -8.81671,0.22482,0.65151 
+_mirror -8.90271,-0.13142,0.65151  -8.82671,-0.39431 -8.81671,-0.38431  _union -8.82671,-0.39431,0.65151 1 @0.61912<45 -8.36951,-0.47031,0.65151 -8.90271,0.06289,0.65151 
+_rotate3d -8.36951,-0.39431,0.48959  y -8.82671,-0.39431,0.65151 90
+_rotate3d -8.82671,-0.09903,0.65151  z -8.82671,-0.39431,0.65151 90
+-layer s 0
+  
+-layer f inletweirelbow
+  
+-layer m inletweir
+c t 0,255,255
+inletweir
+  
+_-view o t _zoom w -9.45584,-0.56624,0.65151 -9.11199,-0.22239,0.65151 _cylinder -9.28391,-0.39431,0.65151 0.16192 1.00976 _cylinder -9.28391,-0.39431,0.65151 0.13652 1.00976 _subtract -9.12199,-0.39431,0.65151  -9.14739,-0.39431,0.65151 
+-layer s 0
+  
+-layer f inletweir
+  
+_-view o t
+-layer m echanneltank
+c t 214,214,214
+echanneltank
+  
+_-view o t _zoom w 0.16,-1.23724,0 -0.93751,0.01,1.76127 _box 0,-1.07724,0 -0.77751,-0.15,1.76127 _box 0.15,-1.22724,-0.15 -0.92751,0,1.76127 _subtract 0.15,-1.22724,-0.15  0,-1.07724,0 
+_box 0,-1.07724,0 -0.77751,-0.15,0.72751
+_union all 
+_box -0.8753,-0.15,0.78597 0,6.777,1.76127
+_subtract 0,-1.07724,0  -0.8753,-0.15,0.78597 
+-layer s 0
+  
+-layer f echanneltank
+  
+-layer m exitweirelbow
+c t 0,255,0
+exitweirelbow
+  
+_-view o t _zoom w -0.73751,-1.05582,0.65151 0.58551,0.2672,0.65151 _torus -0.076,-0.39431,0.65151 0.4572 0.16192 _box -0.72751,-1.04582,0.41359 -0.076,0.2572,0.88944 _subtract 0.54313,-0.39431,0.65151  -0.076,-0.39431,0.65151 
+_torus -0.076,-0.39431,0.65151 0.4572 0.13652 _subtract 0.54313,-0.39431,0.65151  -0.66973,-0.39431,0.65151  _box -0.076,-1.02343,0.4572 0.55313,-0.39431,0.84582 _subtract -0.076,0.06289,0.65151  -0.076,-0.39431,0.65151 
+_cylinder -0.076,0.06289,0.65151 0.19431 a -0.152,0.06289,0.65151 _cylinder -0.076,0.06289,0.65151 0.16192 a -0.152,0.06289,0.65151 _subtract -0.076,-0.13142,0.65151  -0.162,-0.09903,0.65151 -0.066,0.22482,0.65151 
+_mirror -0.152,-0.13142,0.65151  -0.076,-0.39431 -0.066,-0.38431  _union -0.076,-0.39431,0.65151 1 @0.61912<45 0.3812,-0.47031,0.65151 -0.152,0.06289,0.65151 
+_rotate3d 0.3812,-0.39431,0.48959  y -0.076,-0.39431,0.65151 90
+_rotate3d -0.076,-0.09903,0.65151  z -0.076,-0.39431,0.65151 90
+_copy 0,-0.39431,0  0,-0.39431,0 0,-0.83293,0 
+-layer s 0
+  
+-layer f exitweirelbow
+  
+-layer m exitweir
+c t 0,255,255
+exitweir
+  
+_-view o t _zoom w -0.70513,-0.56624,0.65151 -0.36128,-0.22239,0.65151 _cylinder -0.5332,-0.39431,0.65151 0.16192 0.87538 _cylinder -0.5332,-0.39431,0.65151 0.13652 0.87538 _subtract -0.37128,-0.39431,0.65151  -0.39668,-0.39431,0.65151 
+_copy -0.66973,-0.39431,0.65151  -0.66973,-0.39431,0.65151 -0.66973,-0.83293,0.65151 
+-layer s 0
+  
+-layer f exitweir
+  
+-layer m framewall
+c t 91,91,91
+framewall
+  
+-layer s framewall
+  
+0
+_box 0.15,0.15,0.95036 -9.37822,0.19,0.88036
+_box 0.15,2.269,0.95036 -9.37822,2.309,0.88036
+_box 0.15,2.459,0.95036 -9.37822,2.499,0.88036
+_box 0.15,4.578,0.95036 -9.37822,4.618,0.88036
+_box 0.15,4.768,0.95036 -9.37822,4.808,0.88036
+_box 0.15,6.887,0.95036 -9.37822,6.927,0.88036
+-block framewall
+0.15,0.15,0.95036 all 
+-insert framewall
+0,0,0.95036 
+ 
+-layer s 0
+  
+-layer f framewall
+  
+-layer s 0
+  
+-layer t tank
+  
+-layer t framewall
+  
+-block tank
+0,0,0 all 
+-insert tank
+0,0,0 
+ 
+-layer f framewall
+  
+-layer f tank
+  
