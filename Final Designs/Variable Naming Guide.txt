@@ -1,6 +1,6 @@
 3					1	2	3	END						Program Outputs													Program Inputs									Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	variable type	Returned to LabVIEW	Basic Client Inputs	Expert Client Inputs	Design Assumptions	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Materials List	Floc Hopper	Rapid Mixer	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Floc Hopper	Rapid Mix	Materials List		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									75	13	25	76	25	24	24	70	8	0	7	6	17	23	0	0			37	9	46	9	0	8	20	35		0	0	0	0	0	0	101		0	0	0	0	0	0	
+									81	13	25	76	25	24	24	70	8	0	7	6	17	23	0	0			37	9	46	9	0	8	20	35		0	0	0	0	0	0	101		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank	Área del tanque de entrada		0									1				1																													
 A	Et	Channel	Water	A.EtChannelWater	Cross sectional area of the upper channel flow at the critical depth			0													1																													
 A	Et	Orifice		A.EtOrifice	Area of the orifice for the entrance tank			0													1																													
@@ -192,11 +192,11 @@ L	Floc	Hopper		L.FlocHopper	Length of the floc hopper	Longitud de la tolva recol
 L	Floc	Hopper	Offset	L.FlocHopperOffset	Distance from the edge of the channel to the bottom of the first lamella			0	1											1																														
 L	Floc	Tank		L.FlocTank	Total length of floc tanks			0							1																																			
 L	Inlet	Channel		L.InletChannel	Length of the inlet channel																																													
-L	Launder	Pipe	Total	L.LaunderPipeTotal	Total length of the pipes in the launders			0											1																															
+L	Launder	Pipe	Total	L.LaunderPipeTotal	Total length of the pipes in the launders			0	1										1																															
 L	Lfom			L.Lfom				0									1																																	
 L	Mp	Column		L.MpColumn	Length of the main platform column			0				1																																						
 L	Pipe	Sed	PlateStand	L.PipeSedPlateStand													1																																	
-L	Pipe	Sed	PlateFrameTotal	L.PipeSedPlateFrameTotal	Total length of PVC pipe in the sed plate frame			0											1																															
+L	Pipe	Sed	PlateFrameTotal	L.PipeSedPlateFrameTotal	Total length of PVC pipe in the sed plate frame			0	1										1																															
 L	Plt	Assumed		L.PltAssumed	Length of the plant leveling tank			0				1																																						
 L	Rm	Pipe		L.RmPipe	Total pipe length between the orifices and the flocculator (rapid mix pipe)			0				1																																						
 L	Sed			L.Sed	Length of one sed tank	Longitud de un tanque de sedimentación		0	1							1	1											1	1	1			1	1																
@@ -213,7 +213,7 @@ L	Sed	Plate	Sheet	L.SedPlateSheet	Length of the sheets used to make the plate se
 L	Sed	Port		L.SedPort	The adjusted cut length due to the angle of the slope	La longitud ajustada de corte debido al ángulo de inclinación		0	1							1																																		
 L	Sed	Slope	Manifold	L.SedSlopeManifold	Length of the concrete plate creating the top of the inlet manifold			0								1																		1																
 L	Sed	Total		L.SedTotal	Total length of a single valley sed tank (placed end to end)			0								1																																		
-L	Weir			L.Weir	Total length of weir pipe														1																															
+L	Weir			L.Weir	Total length of weir pipe				1										1																															
 Mu	Alum	Slope		Mu.AlumSlope	Dynamic viscosity of alum coagulant			0						1																																				
 Mu	Alum	Slope	Intercept	Mu.AlumSlopeIntercept				0						1																																				
 MW	Al			MW.Al	Molecular weight of aluminum			0						1																																				
@@ -234,7 +234,7 @@ N	Floc	Channel	Baffles	N.FlocChannelBaffles	Number of baffles in each channel	Ca
 N	Floc	Channel	Spaces	N.FlocChannelSpaces	Array of number of spacings between baffles in each channel										1																																			
 N	Floc	Channels		N.FlocChannels	Number of floc channels	Cantidad de canales de floculación		0	1						1																			1																
 N	Launders			N.Launders	Total number of launders																													1																
-N	Launder	Couplings		N.LaunderCouplings	Total number of launder couplings			0											1																															
+N	Launder	Couplings		N.LaunderCouplings	Total number of launder couplings			0	1										1																															
 N	Lfom			N.Lfom				0				1																																						
 N	Lfom	Orifices	Firstrow	N.LfomOrificesFirstrow	Number of orifices in the first row of the lfom			0				1																																						
 N	Pipes	Sed	PlateFrame	N.PipesSedPlateFrame	Number of pipes in the sed plate frame			0																																										
@@ -260,8 +260,8 @@ N	Sed	Slope	Inlets	N.SedSlopeInlets	Number of inlets feeding each sed tank inlet
 N	Sed	Sludge		N.SedSludge	Number of sludge drains	Cantidad de drenajes de lodo		0								1																																		
 N	Sed	Sludge	Orifices	N.SedSludgeOrifices	Number of orifices in sludge drain	Cantidad de orificios en el drenaje de lodo		0	1							1																																		
 N	Sed	Tanks		N.SedTanks	Number of sed tanks	Cantidad de tanques de sedimentación 		0	1	1																			1					1																
-N	Valve	Couplings		N.ValveCouplings	Number of couplings for sed tank			0											1																															
-N	Valves			N.Valves	Number of valves for sed tank														1															1																
+N	Valve	Couplings		N.ValveCouplings	Number of couplings for sed tank			0	1										1																															
+N	Valves			N.Valves	Number of valves for sed tank				1										1															1																
 ND	Plt	Weir		ND.PltWeir	Nominal pipe diameter of the weir			0								1																		1																
 ND	Sed	Launder		ND.SedLaunder	Diameter of the sed tank launder	Diámetro del tubo perforado de salida		0	1							1													1																					
 ND	Sed	Launder	Est	ND.SedLaunderEst	Estimated sed tank launder diameter			0								1																																		
@@ -357,18 +357,19 @@ V	Sed	Up	ActiveBelow	V.SedUpActiveBelow				0								1
 V	Sed	Up	Bod	V.SedUpBod	Maximum upflow velocity in sed tank to allow floc blanket formation	Velocidad máxima de flujo ascendente en tanque de sedimentación que permite la formación del lecho de flóculos 		0			1																		1																					
 V	Up	Floc	Hopper	V.UpFlocHopper	Upward velocity in the hopper	Velocidad ascendente en la tolva		0			1																					1																		
 V	Weir			V.Weir	Velocity through over the weir			0												1																														
-Vol	Entrance	Tank		Vol.EntranceTank	Volume of the entrance tank walls and floor														1																															
-Vol	Exit	Channel	Tank	Vol.ExitChannelTank	Volume of exit channel weir tank														1																															
-Vol	Exit 	Channel		Vol.Exit Channel	Volume of the exit channel														1																															
-Vol	Floc	Baffles	Total	Vol.FlocBafflesTotal	Total volume of the floc baffles			0											1																															
-Vol	Floc	Tank		Vol.FlocTank	Volume of the floc tank walls and floor														1																															
-Vol	Inlet	Channel	Tank	Vol.InletChannelTank	Volume of inlet channel weir tank														1																															
-Vol	Inlet	Channel		Vol.InletChannel	Volume of the inlet channel														1																															
-Vol	Sed	Slopes		Vol.SedSlopes	Volume of the inlet slopes in the sedimentation tank														1																															
-Vol	Sed	Tank		Vol.SedTank	Volume of the sedimentation tank walls and floor														1																															
+Vol	Entrance	Tank		Vol.EntranceTank	Volume of the entrance tank walls and floor				1										1																															
+Vol	Exit	Channel	Tank	Vol.ExitChannelTank	Volume of exit channel weir tank				1										1																															
+Vol	Exit 	Channel		Vol.Exit Channel	Volume of the exit channel				1										1																															
+Vol	Floc	Baffles	Total	Vol.FlocBafflesTotal	Total volume of the floc baffles			0	1										1																															
+Vol	Floc	Tank		Vol.FlocTank	Volume of the floc tank walls and floor				1										1																															
+Vol	Inlet	Channel	Tank	Vol.InletChannelTank	Volume of inlet channel weir tank				1										1																															
+Vol	Inlet	Channel		Vol.InletChannel	Volume of the inlet channel				1										1																															
+Vol	Sed	Slopes		Vol.SedSlopes	Volume of the inlet slopes in the sedimentation tank				1										1																															
+Vol	Sed	Tank		Vol.SedTank	Volume of the sedimentation tank walls and floor				1										1																															
 Vol	Stock	Tank		Vol.StockTank	Volume of the aluminum sulfate stock tank	Volumen del tanque de almacenaje de sulfato de aluminio		0	1					1					1		1																													
-Vol	Sed	Inlet	Chimneys	Vol.SedInletChimneys	Volume of drop chimneys into sed tank														1																															
-Vol	Total	Walls		Vol.TotalWalls	Total volume of plant channel and tank walls 														1																															
+Vol	Sed	Chimney	Pipe	Vol.SedChimneyPipe	Volume of pipe opening in inlet drop chimneys																													1																
+Vol	Sed	Inlet	Chimneys	Vol.SedInletChimneys	Volume of drop chimneys into sed tank				1										1				1																											
+Vol	Total	Walls		Vol.TotalWalls	Total volume of plant channel and tank walls 				1										1																															
 W	Ap	Column		W.ApColumn	Width of the alum platfrom column			0				1																																						
 W	Ap	Walkway		W.ApWalkway	Extra width for the alum platform walkway			0				1																																						
 W	Cp	Column		W.CpColumn				0				1																																						
