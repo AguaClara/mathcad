@@ -1,12 +1,12 @@
 3					1	2	3	END						Program Outputs													Program Inputs									Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	variable type	Returned to LabVIEW	Basic Client Inputs	Expert Client Inputs	Design Assumptions	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Materials List	Floc Hopper	Rapid Mixer	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Floc Hopper	Rapid Mix	Materials List		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									76	13	25	76	25	24	26	79	8	0	1	6	17	23	0	0			37	9	53	9	0	8	20	34		0	1	0	0	0	0	108		0	0	0	0	0	0	
+									79	13	25	76	25	24	26	80	8	0	1	6	17	23	0	0			37	9	53	9	0	8	20	34		0	1	0	0	0	0	108		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank	Área del tanque de entrada		0									1				1																													
 A	Et	Channel	Water	A.EtChannelWater	Cross sectional area of the upper channel flow at the critical depth			0													1																													
 A	Et	Orifice		A.EtOrifice	Area of the orifice for the entrance tank			0													1																													
 A	Floc	Entry		A.FlocEntry	Area of the entrance to the flocculator			0													1																													
 A	Floc	Hopper		A.FlocHopper	Cross sectional area of the floc hopper	Área transversal de la tolva de flóculos		0												1																														
-A	Floc	Port		A.FlocPort	Area of the floc port			0							1																																			
+A	Floc	Port		A.FlocPort	Area of the floc port			0	1						1																																			
 A	Floc	Tank		A.FlocTank	Area of floc tank																																													
 A	Inlet	Channel		A.InletChannel	Cross Sectional Area Required in the InletChannel			0								1																																		
 A	Sed	Inlet	Manifold	A.SedInletManifold	Area of the inlet manifold determined by geometry			0								1																																		
@@ -32,16 +32,16 @@ B	Lfom	Orifice		B.LfomOrifice	Vertical distance between orifices in the lfom			0
 B	Sed	Launder	Orifices	B.SedLaunderOrifices	Center-to-center distance between launder orifices	Distancia de centro a centro entre orificios		0	1		1																		1																					
 B	Sed	Pipe		B.SedPipe				0		1																																								
 B	Sed	Pipe	PlateStand	B.SedPipePlateStand				0																																										
-B	Sed	Plate		B.SedPlate	Perpendicular center-to-center distance between lamella	Distancia perpendicular entre placas de sedimentación		0	1							1																																		
+B	Sed	Plate		B.SedPlate	Perpendicular center-to-center distance between lamella	Distancia perpendicular de centro a centro entre placas de sedimentación		0	1							1																																		
 B	Sed	PlateFrame	Pipes	B.SedPlateFramePipes	Center to center distance between the lamella frame pipes			0	1																									1																
-B	Sed	Plate	Horizontal	B.SedPlateHorizontal	Horizontal distance between the lamella (takes slant angle into account)	Distancia horizontal entre la lámela (Tomar en cuenta el grado de inclinación) 		0	1							1																																		
+B	Sed	Plate	Horizontal	B.SedPlateHorizontal	Horizontal distance between the lamella (takes slant angle into account)	Distancia horizontal entre la lámela (Toma en cuenta el grado de inclinación) 		0	1							1																																		
 B	Sed	Plate	Min	B.SedPlateMin	Min perpendicular spacing between lamella	Espacio perpendicular mínimo entre lámelas 		0			1																		1																					
 B	Sed	Port		B.SedPort	Height of a port	Altura de los puerto del túnel de distribución		0	1							1																																		
 B	Sed	Sludge	Orifices	B.SedSludgeOrifices	Center-to-center distance between sludge drain orifices	Distancia de centro a centro entre orificios para drenado de lodillo		0	1							1																																		
 Baffle	Complex			Baffle.Complex	"0 if rectangular, 1 if corrugated"			0				1																																						
 C	Alum	Dose	Max	C.AlumDoseMax	Maximum required alum dose	Máxima dosis requerida de sulfato de aluminio		0				1																																						
 C	Alum	Stock		C.AlumStock	concentration of alum in the stock tank	Concentración de sulfato de aluminio en tanque de almacenamiento		0	1	1																						1																		
-C	Alum	Dose	Max	C.AlumDoseMax	Max dose of aluminum sulfate	Dosis máxima sulfato de aluminio		0		1																	1						1																	
+C	Alum	Dose	Max	C.AlumDoseMax	Max dose of aluminum sulfate	Dosis máxima de sulfato de aluminio		0		1																	1						1																	
 C	d			C.d				0																			1						1																	
 Cd	Plt	Weir		Cd.PltWeir	Weir coefficient			0				1																	1																					
 CP	Floc			CP.Floc	collision potential needed to form large flocs in the flocculator	Colisión potencial necesaria para formación de flóculos grandes en el floculador		0			1																	1																						
@@ -61,6 +61,7 @@ D	Fcm	Valve	Orifice	D.FcmValveOrifice	Diameter of the valve in the FCM			0				1	
 D	Floc	Entry	Orifice	D.FlocEntryOrifice	Diameter of the floc entry orifice if it is a circle																1																													
 D	m			D.m	Diffusion coefficient							1																					1																	
 D	Plt	Weir	Estimated	D.PltWeirEstimated				0								1																																		
+D	Sed	Chimney	Pipe	D.SedChimneyPipe	Diameter of the pipe delivering water from the inlet channel to the sed tank				1							1																																		
 D	Sed	Launder	Orifice	D.SedLaunderOrifice	Diameter of the sed tank launder orifice	Diámetro de los orificios del tubo perforado de salida del tanque de sedimentación		0	1							1																																		
 D	Sed	Launder	OrificeEst	D.SedLaunderOrificeEst	Estimated diameter of launder orifice			0								1																																		
 D	Sed	Sludge	Orifice	D.SedSludgeOrifice	Diameter of sludge drain orifice	Diámetro del orificio del drenaje de lodo		0	1							1																																		
@@ -76,9 +77,9 @@ ED	Floc	Large		ED.FlocLarge	Engery dissipation rate for large flocs			0								1
 ED	Rm			ED.Rm	Energy dissipation rate for fine scale mixing in the rapid mix	Tasa de disipación de energía para mezcla rápida hasta escala fina		0			1																																							
 ED	Sed	Inlet		ED.SedInlet	Energy dissipation rate for the inlet of the sed tank	Tasa de disipación de energía para la entrada del tanque de sedimentación		0			1																		1																					
 ED	Target			ED.Target	Energy dissipation needed for a particular collision potential										1																																			
-EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English) for drill bit sizes"	Seria de brocas		0		1																																								
-EN	Pipe	Spec		EN.PipeSpec	enumerated type for pipe series	Calibre de tubería		0		1																			1																					
-EN	Tube	Series		EN.TubeSeries	enumerated type for metric or english tubes	Calibre de mangueras		0		1																			1																					
+EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English) for drill bit sizes"	Serie de brocas		0		1																																								
+EN	Pipe	Spec		EN.PipeSpec	enumerated type for pipe series	Calibre de caño		0		1																			1																					
+EN	Tube	Series		EN.TubeSeries	enumerated type for metric or english tubes	Calibre de tubería		0		1																			1																					
 H	Ap	Column		H.ApColumn				0				1																																						
 H	Cp	Column		H.CpColumn	Height of the chlorine platform column			0				1																																						
 H	d	max		H.dmax				0				1																																						
@@ -89,13 +90,13 @@ H	Exit	Channel		H.ExitChannel	Height of the exit channel	Altura del canal de sal
 H	Floc			H.Floc	Height of the floc tank			0							1																			1																
 H	Floc	Hopper		H.FlocHopper	Height of the floc hopper															1																														
 H	Floc	Inlet	Pipe	H.FlocInletPipe	Height of the inlet pipe to the flocculator above the floor of the sed tank			0				1																																						
-H	Floc	Overlap	Min	H.FlocOverlapMin	Minimum overlap between adjacent baffles to prevent short circuiting	Espacio mínimo de traslape entre pantallas separadoras para prevenir corto circuitos		0			1																																							
-H	Floc	Port		H.FlocPort	Height of the floc port 			0							1																			1																
+H	Floc	Overlap	Min	H.FlocOverlapMin	Minimum overlap between adjacent baffles to prevent short circuiting	Espacio mínimo de traslape entre pantallas separadoras adyacentes para prevenir corto circuitos		0			1																																							
+H	Floc	Port		H.FlocPort	Height of the floc port 			0	1						1																			1																
 H	Inlet	Channel		H.InletChannel	Height of the inlet channel	Altura del canal de entrada 		0	1							1													1																					
 H	Lfom	Freefall		H.LfomFreefall	Difference between the height of the water in floc tank and the bottom set of holes on the lfom			0				1																		1																				
 H	Lfom	SF		H.LfomSF	Safety factor for the height of the linear flow orifice meter			0				1																		1																				
 H	Plant	Freeboard		H.PlantFreeboard	Freeboard for the plant	Espacio para evitar rebalse para la planta		0	1	1																		1	1	1			1																	
-H	Plt	Weir		H.PltWeir	Height of the weir carrying water to the distribution tank	Altura de la vertedero que lleva agua al tanque de distribución		0	1							1																		1																
+H	Plt	Weir		H.PltWeir	Height of the weir carrying water to the distribution tank	Altura del vertedero que lleva agua al tanque de distribución		0	1							1																		1																
 H	Sed			H.Sed	Height of the sed tank	Altura del tanque de sedimentación		0	1							1																		1																
 H	Sed	Above		H.SedAbove	Height of water needed above the lamella	Altura necesaria del agua sobre la placa de sedimentación		0								1																																		
 H	Sed	Bay	Divider	H.SedBayDivider	Height of the wall dividing Sedimentation tank bays	Altura de la pared que divide las cameras de sedimentación		0	1							1																																		
@@ -145,7 +146,7 @@ HW	Et	Total		HW.EtTotal	Total water depth in the entrance tank			0													1
 HW	Et	Waterfall		HW.EtWaterfall	Height of the water over the waterfall in the entrance tank			0													1																													
 HW	Exit	Channel		HW.ExitChannel	Water depth in the exit channel	Profundidad del agua en el tanque de salida		0	1							1																																		
 HW	Floc	End		HW.FlocEnd	Water height at the end of the flocculator	Profundidad del  agua en la salida del floculador		0	1						1																																			
-HW	Floc	Start		HW.FlocStart	water height at the beginning pf the flocculator	Profundidad del  agua en la entrada del floculador		0	1						1															1																				
+HW	Floc	Start		HW.FlocStart	water height at the beginning of the flocculator	Profundidad del  agua en la entrada del floculador		0	1						1															1																				
 HW	Inlet	Channel		HW.InletChannel	Water height in the inlet channel	Profundidad del  agua en el canal de entrada		0	1							1													1																					
 HW	Inlet	Channel	Max	HW.InletChannelMax	Maximum allowable height of water in the inlet channel	Profundidad del máxima permitida del agua en el canal de entrada		0			1																		1																					
 HW	Sed			HW.Sed	Water depth in the sed tank	Profundidad del agua en el tanque de sedimentación		0	1							1												1	1				1																	
@@ -186,7 +187,7 @@ L	Cp	Column		L.CpColumn	Length of the chlorine platform column			0				1
 L	Et			L.Et	Length of the entrance tank	Longitud del tanque de entrada		0	1								1																																	
 L	Et			L.Et	Length of the entrance tank																1																													
 L	Et	Orifice	Used	L.EtOrificeUsed	Length of the orifice used in the entrance tank																1																													
-L	Et			L.Et	Length of the entrance tank	Longitud de la tanque de entrada		0	1								1																	1																
+L	Et			L.Et	Length of the entrance tank	Longitud del tanque de entrada		0	1								1																	1																
 L	Exit	Channel		L.ExitChannel	Length of the exit channel	Longitud del canal de salida		0	1							1																		1																
 L	Fcm	Tube		L.FcmTube	Length of tube for the flow control module			0						1													1																							
 L	Fcm	Tube	Max	L.FcmTubeMax	Maximum length of tube allowed for the flow control module			0				1																																						
@@ -214,7 +215,7 @@ L	Sed	Max		L.SedMax	Maximum length of the sedimentation tank			0								1
 L	Sed	Pipes	Total	L.SedPipesTotal	Total length of pipes in the sed tanks			0																																										
 L	Sed	Plate		L.SedPlate	Length of the plate settlers	Longitud de placas sedimentadores		0	1							1																1		1																
 L	Sed	Plate	Est	L.SedPlateEst	Estimated Length of the lamella (based on channel dimensions)			0								1																																		
-L	Sed	Plate	Sheet	L.SedPlateSheet	Length of the sheets used to make the plate settlers	Longitud de las láminas para elaborar las placas sedimentador		0		1																								1																
+L	Sed	Plate	Sheet	L.SedPlateSheet	Length of the sheets used to make the plate settlers	Longitud de las láminas para elaborar las placas sedimentadoras		0		1																								1																
 L	Sed	Port		L.SedPort	The adjusted cut length due to the angle of the slope	La longitud ajustada de corte debido al ángulo de inclinación		0	1							1																																		
 L	Sed	Slope	Manifold	L.SedSlopeManifold	Length of the concrete plate creating the top of the inlet manifold			0								1																		1																
 L	Sed	Total		L.SedTotal	Total length of a single valley sed tank (placed end to end)			0								1																																		
@@ -396,7 +397,7 @@ W	Sed	Inlet	Weir	W.SedInletWeir	Width of the weir in the inlet channel				1					
 W	Sed	Manifold	Entrance	W.SedManifoldEntrance	Width of drop chimneys connecting channel to sed inlet manifolds	Ancho de la Chimenea de caída que conecta al canal de entrada del túnel de distribución		0	1							1																																		
 W	Sed	Manifold	Port	W.SedManifoldPort	Width of port through which water enters into the sed inlet manifold	Ancho del puerto a través del cual el agua entra al túnel de distribución		0	1							1																																		
 W	Sed	Port		W.SedPort	Width of a port	Ancho de un puerto		0	1							1													1																					
-W	Sed	Manifold	Plate	W.SedManifoldPlate	Width of one of the plates that cover the sedimentation tank inlet manifolds	Grosor de una de las placas que cubre el túnel de distribución del tanque de sedimentación		0	1	1																																								
+W	Sed	Manifold	Plate	W.SedManifoldPlate	Width of one of the plates that cover the sedimentation tank inlet manifolds	Ancho de una de las placas que cubre el túnel de distribución del tanque de sedimentación		0	1	1																																								
 W	Sed	SlopePlate		W.SedSlopePlate																									1																					
 W	Sed	SlopePlate	Remaining	W.SedSlopePlateRemaining	"Width of the extra distance left between the last slope plate and the wall of the tank, to be filled by a fraction of a sed slope plate"	Ancho de la distancia extra que queda entre la última palca inclinada y la pared del tanque que debe ser llenada por una fracción de una placa inclinada de sedimentación		0	1							1																		1																
 W	Sed	Sludge		W.SedSludge	Width of the sludge drain	Ancho del drenaje de lodo		0	1							1													1																					
