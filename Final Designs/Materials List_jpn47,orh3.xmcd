@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?validation-md5-digest a27a3abc909900c84de560752135c6ee?>
+<?validation-md5-digest 6ec61b00a7b323142cf4d76297e63fa3?>
 <worksheet version="3.0.3" xmlns="http://schemas.mathsoft.com/worksheet30" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ws="http://schemas.mathsoft.com/worksheet30" xmlns:ml="http://schemas.mathsoft.com/math30" xmlns:u="http://schemas.mathsoft.com/units10" xmlns:p="http://schemas.mathsoft.com/provenance10">
 	<pointReleaseData/>
 	<metadata>
@@ -13,9 +13,9 @@
 			<revisedBy>Labuser</revisedBy>
 		</userData>
 		<identityInfo>
-			<revision>15</revision>
+			<revision>17</revision>
 			<documentID>ACB2B2DA-A4F9-4FD9-B242-C14414C0FC04</documentID>
-			<versionID>A4B03F2D-32DB-44EF-B1C7-BEF5393C3CFC</versionID>
+			<versionID>62D10BE1-82B2-4BC4-BAFE-77DACE7BFE27</versionID>
 			<parentVersionID>00000000-0000-0000-0000-000000000000</parentVersionID>
 			<branchID>00000000-0000-0000-0000-000000000000</branchID>
 		</identityInfo>
@@ -107,7 +107,7 @@
 		</editor>
 		<fileFormat image-type="image/png" image-quality="75" save-numeric-results="true" exclude-large-results="true" save-text-images="false" screen-dpi="96"/>
 		<miscellaneous>
-			<handbook handbook-region-tag-ub="1104" can-delete-original-handbook-regions="true" can-delete-user-regions="true" can-print="true" can-copy="true" can-save="true" file-permission-mask="4294967295"/>
+			<handbook handbook-region-tag-ub="1099" can-delete-original-handbook-regions="true" can-delete-user-regions="true" can-print="true" can-copy="true" can-save="true" file-permission-mask="4294967295"/>
 		</miscellaneous>
 	</settings>
 	<regions>
@@ -116,7 +116,7 @@
 				<originRef doc-id="991C0F7B-5ECD-4B7D-8E59-716CCDB478D6" version-id="7166DE63-47E2-4A55-9E78-E76F1FCAC25E" branch-id="00000000-0000-0000-0000-000000000000" revision-num="133" is-modified="true" region-id="0" href="C:\Documents and Settings\labuser.ACCEL\Desktop\New Folder\MasterProgram.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 					<hash/>
 				</originRef>
-				<parentRef doc-id="ACB2B2DA-A4F9-4FD9-B242-C14414C0FC04" version-id="F2416C95-2057-4B48-A58C-80D2E7478267" branch-id="00000000-0000-0000-0000-000000000000" revision-num="180986812" is-modified="true" region-id="1099" href="C:\Documents and Settings\labuser.ACCEL\Desktop\New Folder\Materials List_jpn47.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+				<parentRef doc-id="ACB2B2DA-A4F9-4FD9-B242-C14414C0FC04" version-id="F2416C95-2057-4B48-A58C-80D2E7478267" branch-id="00000000-0000-0000-0000-000000000000" revision-num="180480372" is-modified="true" region-id="1099" href="C:\Documents and Settings\labuser.ACCEL\Desktop\New Folder\Materials List_jpn47.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 					<hash>57c92b5bd39b58cf02b6b339621e5486</hash>
 				</parentRef>
 				<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -702,22 +702,15 @@
 			</math>
 			<rendering item-idref="13"/>
 		</region>
-		<region region-id="1026" left="522" top="560.25" width="167.25" height="36" align-x="522" align-y="570" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
-			<text use-page-width="false" push-down="false" lock-width="true">
-				<p style="Normal" margin-left="inherit" margin-right="inherit" text-indent="inherit" text-align="inherit" list-style-type="inherit" tabs="inherit">
-					<b>**Should we create variable T.SedFloor or use existing variable T.Mp for floor thickness**</b>
-				</p>
-			</text>
-		</region>
-		<region region-id="1025" left="36" top="567" width="181.5" height="22.5" align-x="91.5" align-y="582" show-border="false" show-highlight="true" is-protected="true" z-order="0" background-color="#80ffff" tag="">
-			<math error="This variable is undefined." optimize="false" disable-calc="false">
+		<region region-id="1025" left="36" top="567" width="195.75" height="22.5" align-x="91.5" align-y="582" show-border="false" show-highlight="true" is-protected="true" z-order="0" background-color="#80ffff" tag="">
+			<math optimize="false" disable-calc="false">
 				<ml:define xmlns:ml="http://schemas.mathsoft.com/math30">
 					<ml:id xml:space="preserve" subscript="SedFloor">Vol</ml:id>
 					<ml:eval placeholderMultiplicationStyle="default">
 						<ml:apply>
 							<ml:mult/>
 							<ml:id xml:space="preserve" subscript="SedFloor">A</ml:id>
-							<ml:id xml:space="preserve" subscript="SedFloor">T</ml:id>
+							<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
 						</ml:apply>
 						<ml:unitOverride>
 							<ml:apply>
@@ -726,6 +719,14 @@
 								<ml:real>3</ml:real>
 							</ml:apply>
 						</ml:unitOverride>
+						<result xmlns="http://schemas.mathsoft.com/math30">
+							<unitedValue>
+								<ml:real>1.4595542240333275</ml:real>
+								<unitMonomial xmlns="http://schemas.mathsoft.com/units10">
+									<unitReference unit="meter" power-numerator="3"/>
+								</unitMonomial>
+							</unitedValue>
+						</result>
 					</ml:eval>
 				</ml:define>
 			</math>
@@ -2149,10 +2150,10 @@
 							<ml:id xml:space="preserve" subscript="SedBays">N</ml:id>
 						</ml:apply>
 						<ml:provenance expr-id="1">
-							<originRef doc-id="583D4C66-9586-45E4-91DD-6984A3E621E3" version-id="7D658B54-69BF-4A8E-9C56-37E07D26501E" branch-id="00000000-0000-0000-0000-000000000000" revision-num="235997196" is-modified="false" region-id="1377" href="C:\Documents and Settings\ak429\Desktop\Design\Final Designs\DesignAssumptions.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+							<originRef doc-id="583D4C66-9586-45E4-91DD-6984A3E621E3" version-id="7D658B54-69BF-4A8E-9C56-37E07D26501E" branch-id="00000000-0000-0000-0000-000000000000" revision-num="261960676" is-modified="false" region-id="1377" href="C:\Documents and Settings\ak429\Desktop\Design\Final Designs\DesignAssumptions.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 								<hash/>
 							</originRef>
-							<parentRef doc-id="583D4C66-9586-45E4-91DD-6984A3E621E3" version-id="7D658B54-69BF-4A8E-9C56-37E07D26501E" branch-id="00000000-0000-0000-0000-000000000000" revision-num="180986812" is-modified="false" region-id="1377" href="C:\Documents and Settings\ak429\Desktop\Design\Final Designs\DesignAssumptions.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+							<parentRef doc-id="583D4C66-9586-45E4-91DD-6984A3E621E3" version-id="7D658B54-69BF-4A8E-9C56-37E07D26501E" branch-id="00000000-0000-0000-0000-000000000000" revision-num="180480372" is-modified="false" region-id="1377" href="C:\Documents and Settings\ak429\Desktop\Design\Final Designs\DesignAssumptions.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 								<hash/>
 							</parentRef>
 							<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -2699,25 +2700,26 @@ eqxkT7tWWyhpGI9ym43NzL9ZR97nJrwM7rwiVtJ19OqR5qOtj0k+hxTUoz61h/nhDm8PRl/Z
 Bq8C419nnhv8erUXKUR69iDv83ifzV0P37PmePFl1r5rrcuEt8ITXplknl2QmVhxrXlJgNie
 E9uzxxcmvAMmPOuSBAPROQMReSWv2RrQLnVm77On9ZjwDpbw9iQe2sIgTA1QA0fSwE+zbwpI
 8CRzPQAAAABJRU5ErkJggg==</item>
-		<item item-id="14">iVBORw0KGgoAAAANSUhEUgAAAPIAAAAeCAYAAAAW7kNdAAAAAXNSR0IArs4c6QAAAARnQU1B
+		<item item-id="14">iVBORw0KGgoAAAANSUhEUgAAAQUAAAAeCAYAAAAl8At9AAAAAXNSR0IArs4c6QAAAARnQU1B
 AACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAA
-A19JREFUeF7tXItuwyAM7P58f941lZhc12/yAm5SpakBAuc7+yDZfn6fz+cDP0AACIyNwCZk
-fIABODA2Bx4I4NgBRPwQv7erBhFABHBgfA5AyNhaYGs1IAdeG/rtbOv9QUUeMIConuNXz94Y
-NvG2cd6C7h0U/UEscOBaDkDIqMiw1YNzANZ68ACiCl5bBe+AP/bIEDEq8UQcgLWeKJh3qBCY
-wzUuAUKGkFGZJ+DAh5C/nkux51RetuVH4l77la6vgs3roeb24r74WSneR6+ValU87JKeT0Um
-RTfdkfartVlJyC22m6Cl31eL/Vnr/XiOXBXy+80SErizJj/Cff4z5mL4UCGPEKfR55gWMrfg
-9O2S0cGQ5t+boCDkaw6ARuYi5UyUP19vdlkdrYrdS/i7A8/3JZHtRI/DuTse3vxWqMhZTmhF
-kGKpnVV5rvcQIUuT8QLPr/OsJG3wvcVl77l3eynQ0jppUqgkxCux0uarCZkehm1YVATf+ngH
-a5Wx9+aAJVLNzVJMtd+/eGQJSLsmTUCr5JHKpZHbW2hl7GqgKtnXs+pSxc4KmWOguYAzsdIE
-yoXVhJiJCe8jjdnuf7SQK5yIxGEXIVtVLmKtJSJmycnnYPWvjJ0hTrWtNi8vw1bW442pJcTq
-2iL9JBFFv/PGj56IHy1kb56e+9L6Hy7kJjCpCnB76IlPE7xU2S2ialXNGt+qWp4LiQSPZmrP
-WnkZWrvO8bZckuVsvPEzWLX7cPtMMfCqsHadfq8JWavOmXlZFT4Se6uNxguLI1FdHfpnjBJJ
-ItnGShQRV5AhdQTc3gBG+q+GlSTYiEAla60lDqtyR65ZCSkS02pFLo1d6ZTtw8UriScq0Gg7
-z55H7Wh2rb3tV8OKC0oSj1VpI4LcYhIdg7e9mz1X7Xgv8SJWNCKajEC5FbGsY+Xa3pio4Asv
-icyMlbdH1kSTESG38dRW73HtLG5k77O7te6xiFR02h7QShyZZBARTBbMbPvVsOqx01SQ2n6Z
-439Etc7G+Kz2hwi52VrvIEXbQ1BbbO1hNYvu3Vezr2eBzl1CZI0zYNWEVTkMk8QbGUez7pLo
-rf332dzI3m93IWcngPZ4hREc6OcAhDzB36NCCP1CGB1DCBlCxj8XmIADEPIEQRy9mmD+/Y7i
-D1h2u14IrUp/AAAAAElFTkSuQmCC</item>
+A4dJREFUeF7tnIty6yAMRNs/75+nTRpnZEWPFdjENntnOnNbmwDao0Vgt98/t9vti/8YAUaA
+EVgicDcFfjEGZIAMLAx8EQbCQAbIgGSApsBKiZUiGVgxQFMgEDSFyRn4O0q4nys+vh5njCwd
+WTqSgXkZWIzgdZ5wNwcCMS8Q1J7aawYeFQPBIBhkgAw8X03g9oHJwGQgA/8M8Exh8oMlJgLN
+0GOA2weaA588kIH140ieKXDFYNVABlYvLklTeHtWqZ5dZvDoRxvZ/TNdnyU2kiH9/5n0rsy1
+woZ1rzwLqPS7egQZvadgPbNEOuodGNLHme+pCH+Veco5zzL/qnaVvLHu3Suuq0eSraYgH2dU
+A3P1+19viT3fFrv6fOUKNMtce+aJJLbFENKudVxlU9DbjKtD0Bt8mgL37FFyInxphuT3WXvr
+3rSNHnAEcVRJZB21utZR2nn75YrgV4+RPrA6inajxrEFI14+ympcbyU8rvQCLttFLL690biF
+KViDqQqjHU4H/AwVigWJJToqlhfDT8YqAjKaqwZ76y2olxBWQlljQZKzyrR1f5icasvp5ab8
+DHThHmoK1qCqK2TmhDoJthAn+4zqKoAky1VjFSW4By2SmIhGWbVi6ZLxqU070hZZCLIxygUP
+4Q41lsg8VmOquBfiQi1Bz8aATjqDZuT1FlNoXS1hsQcediLz1/PNkjPTL+IzqiyRftEYZ2OM
+KpCsLVIpoBVOqVLIwJTOZTna0j5LZM88rIlHgnirbfT50WrVI5oXj+jn2QrpXderlwV9liSW
+lsgcWhjxkjLTNtJKt9WxQnTOOETimiWzd92LP2KokXZIXkbc7fpbklbHHgSWwF4Z5ZVfURJk
+cCGrRav4SLtZYiVhRvWSC0WU+F6C68TOjCgzgk+zgvDUc8+upuAF13K5KiCZcFlpGoHRE9De
+tt7q1wtyTzy2jFWUUBYD6OrvVS/SUCJz0AtN1Xx6dT9S+81NAXXrrExHQWxJlixBRgk0Y6xQ
+U0AqSkTHqikg/bJSKP4WWU8ZHO2Fon1Z637VazfSFFoqJK+a8FbLI1VVI0whimmmOU1hh7/R
+GO3/dNJb1YJ2dmur4ZnHkhSWMXnXos/f2xxmi1WPlrKtF7dI96wy9bYPut9P8rI3j6+8GtUR
+++HrvmTgHAxsfqZA4c8hPHWiTu6WnHAQDjJABlbbJwJBIMgAGZAM/AK3ChtZc1QC+wAAAABJ
+RU5ErkJggg==</item>
 		<item item-id="15">iVBORw0KGgoAAAANSUhEUgAAAm4AAAAeCAYAAACVFZL7AAAAAXNSR0IArs4c6QAAAARnQU1B
 AACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAA
 CNFJREFUeF7tXdtV40oQ5IZATqRACqSwv/eTFEiBFEiBFEiBFLjIa+mOxv2onpckq3zOHhZ7
