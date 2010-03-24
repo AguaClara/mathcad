@@ -1,13 +1,16 @@
 3					1	2	3	END						Program Outputs													Program Inputs									Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	variable type	Returned to LabVIEW	Basic Client Inputs	Expert Client Inputs	Design Assumptions	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Materials List	Floc Hopper	Rapid Mixer	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Floc Hopper	Rapid Mix	Materials List		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									79	13	25	76	25	24	26	80	8	0	1	6	17	23	0	0			37	9	53	9	0	8	20	34		0	1	0	0	0	0	108		0	0	0	0	0	0	
+									84	13	25	76	25	24	69	80	8	0	1	6	17	23	0	0			37	8	53	9	0	8	20	34		0	2	0	0	0	0	107		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank	Área del tanque de entrada		0									1				1																													
 A	Et	Channel	Water	A.EtChannelWater	Cross sectional area of the upper channel flow at the critical depth			0													1																													
 A	Et	Orifice		A.EtOrifice	Area of the orifice for the entrance tank			0													1																													
 A	Floc	Entry		A.FlocEntry	Area of the entrance to the flocculator			0													1																													
 A	Floc	Hopper		A.FlocHopper	Cross sectional area of the floc hopper	Área transversal de la tolva de flóculos		0												1																														
-A	Floc	Port		A.FlocPort	Area of the floc port			1	1						1																																			
+A	Floc	Port		A.FlocPort	Area of the floc port (connecting channels)			1	1						1																																			
+A	Floc	Port	H	A.FlocPortH	Area of the floc port in a horizontal flocculator			1							1																																			
+A	Floc	Port	V	A.FlocPortV	Area of the floc port in a vertical flocculator			1							1																																			
 A	Floc	Tank		A.FlocTank	Area of floc tank																																													
+A	Port				Area of the port cut into the bottom of the floc baffles										1																																			
 A	Inlet	Channel		A.InletChannel	Cross Sectional Area Required in the InletChannel			0								1																																		
 A	Sed	Inlet	Manifold	A.SedInletManifold	Area of the inlet manifold determined by geometry			0								1																																		
 A	Sed	Manifold		A.SedManifold	Cross sectional area of the slope manifold			0																					1																					
@@ -39,14 +42,19 @@ B	Sed	Plate	Min	B.SedPlateMin	Min perpendicular spacing between lamella	Espacio 
 B	Sed	Port		B.SedPort	Height of a port	Altura de los puerto del túnel de distribución		0	1							1																																		
 B	Sed	Sludge	Orifices	B.SedSludgeOrifices	Center-to-center distance between sludge drain orifices	Distancia de centro a centro entre orificios para drenado de lodillo		0	1							1																																		
 Baffle	Complex			Baffle.Complex	"0 if rectangular, 1 if corrugated"			0				1																																						
+Baffle	Type			Baffle.Type	Plastic or Concrete	Altura de los puerto del túnel de distribución									1																																			
 C	Alum	Dose	Max	C.AlumDoseMax	Maximum required alum dose	Máxima dosis requerida de sulfato de aluminio		0				1																																						
 C	Alum	Stock		C.AlumStock	concentration of alum in the stock tank	Concentración de sulfato de aluminio en tanque de almacenamiento		0	1	1																						1																		
 C	Alum	Dose	Max	C.AlumDoseMax	Max dose of aluminum sulfate	Dosis máxima de sulfato de aluminio		0		1																	1						1																	
 C	d			C.d				0																			1						1																	
 Cd	Plt	Weir		Cd.PltWeir	Weir coefficient			0				1																	1																					
+Channels					Range variable for the floc channel			1							1																																			
+Channels	H			Channels.H	Range variable for the floc channels in a horizontal flocculator			1							1																																			
+Channels	V			Channels.V	Range variable for the floc channels in a vertical flocculator			1							1																																			
 CP	Floc			CP.Floc	collision potential needed to form large flocs in the flocculator	Colisión potencial necesaria para formación de flóculos grandes en el floculador		0			1																	1																						
 CP	Floc	Channel		CP.FlocChannel	collision potential per floc channel			1	1						1																																			
 CP	Floc	Total		CP.FlocTotal	Total collision potential in the flocculator			0							1																																			
+CP	Space	H		CP.SpaceH	Collision potential in one space of a horizontal flocculator			0							1																																			
 D	Drill			D.Drill				0				1																	1																					
 D	Drill	Eng		D.DrillEng	Diameter for drill bits in English units			0				1																																						
 D	Drill	Met		D.DrillMet	Diameter for drill bits in metric units			0				1																																						
@@ -61,6 +69,7 @@ D	Fcm	Valve	Orifice	D.FcmValveOrifice	Diameter of the valve in the FCM			0				1	
 D	Floc	Entry	Orifice	D.FlocEntryOrifice	Diameter of the floc entry orifice if it is a circle																1																													
 D	m			D.m	Diffusion coefficient							1																					1																	
 D	Plt	Weir	Estimated	D.PltWeirEstimated				0								1																																		
+D	Port				Horizontal length of the port cut into the bottom of the baffle										1																																			
 D	Sed	Chimney	Pipe	D.SedChimneyPipe	Diameter of the pipe delivering water from the inlet channel to the sed tank				1							1																																		
 D	Sed	Launder	Orifice	D.SedLaunderOrifice	Diameter of the sed tank launder orifice	Diámetro de los orificios del tubo perforado de salida del tanque de sedimentación		0	1							1																																		
 D	Sed	Launder	OrificeEst	D.SedLaunderOrificeEst	Estimated diameter of launder orifice			0								1																																		
@@ -69,6 +78,7 @@ Del	Plt	Weir	H	Del.PltWeirH				0								1
 E	Concrete			E.Concrete	Pipe roughness for flow through a concrete channel			0				1																	1																					
 E	Concrete	Ledge		E.ConcreteLedge								1																					1																	
 E	Pvc			E.Pvc	Roughness coefficient for flow through PVC pipe			0				1										23					28		1																					
+ED	Channel	Range		ED.ChannelRange	Array of energy dissipation values in a vertical flocculator	Valor mínimo de la tasa de disipación para difusión		1							1																																			
 ED	Diffusion	Min		ED.DiffusionMin	Minimum value of energy dissipation rate for diffusion	Valor mínimo de la tasa de disipación para difusión					1																																							
 ED	Floc			ED.Floc	Energy dissipation rate array for flocs	Matriz de tasa de disipación de energía para floculación		1			1																	1	1																					
 ED	Floc	Channel		ED.FlocChannel	Energy dissipation array for floc channels										1																																			
@@ -76,10 +86,11 @@ ED	Floc	Entry	Orifice	ED.FlocEntryOrifice	Energy dissipation rate of bulk fluid	
 ED	Floc	Large		ED.FlocLarge	Engery dissipation rate for large flocs			0								1													1																					
 ED	Rm			ED.Rm	Energy dissipation rate for fine scale mixing in the rapid mix	Tasa de disipación de energía para mezcla rápida hasta escala fina		0			1																																							
 ED	Sed	Inlet		ED.SedInlet	Energy dissipation rate for the inlet of the sed tank	Tasa de disipación de energía para la entrada del tanque de sedimentación		0			1																		1																					
+ED	Space	H		ED.SpaceH	Chooses only the first value of ED.Floc since horizontal flocculators are untapered and will have uniform energy dissipation			0							1																																			
 ED	Target			ED.Target	Energy dissipation needed for a particular collision potential										1																																			
-EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English) for drill bit sizes"	Serie de brocas		0		1																																								
-EN	Pipe	Spec		EN.PipeSpec	enumerated type for pipe series	Calibre de caño		0		1																			1																					
-EN	Tube	Series		EN.TubeSeries	enumerated type for metric or english tubes	Calibre de tubería		0		1																			1																					
+EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English) for drill bit sizes"	Serie de brocas		0	1	1																																								
+EN	Pipe	Series		EN.PipeSeries	enumerated type for pipe series	Calibre de caño		0	1	1																			1																					
+EN	Tube	Series		EN.TubeSeries	enumerated type for metric or english tubes	Calibre de tubería		0	1	1																			1																					
 H	Ap	Column		H.ApColumn				0				1																																						
 H	Cp	Column		H.CpColumn	Height of the chlorine platform column			0				1																																						
 H	d	max		H.dmax				0				1																																						
@@ -91,7 +102,10 @@ H	Floc			H.Floc	Height of the floc tank			0							1																			1
 H	Floc	Hopper		H.FlocHopper	Height of the floc hopper															1																														
 H	Floc	Inlet	Pipe	H.FlocInletPipe	Height of the inlet pipe to the flocculator above the floor of the sed tank			0				1																																						
 H	Floc	Overlap	Min	H.FlocOverlapMin	Minimum overlap between adjacent baffles to prevent short circuiting	Espacio mínimo de traslape entre pantallas separadoras adyacentes para prevenir corto circuitos		0			1																																							
-H	Floc	Port		H.FlocPort	Height of the floc port 			1	1						1																			1																
+H	Floc	Port		H.FlocPort	Height of the floc port (connecting channels)			1	1						1																			1																
+H	Floc	Port	EstV	H.FlocPortEstV	Estimated height of the floc port in a vertical flocculator	Altura del canal de entrada 		0							1																																			
+H	Floc	Port	H	H.FlocPortH	Height of the floc port in a horizontal flocculator	Altura del canal de entrada 		0							1																																			
+H	Floc	Port	V	H.FlocPortV	Height of the floc port in a vertical flocculator	Altura del canal de entrada 		0							1																																			
 H	Inlet	Channel		H.InletChannel	Height of the inlet channel	Altura del canal de entrada 		0	1							1													1																					
 H	Lfom	Freefall		H.LfomFreefall	Difference between the height of the water in floc tank and the bottom set of holes on the lfom			0				1																		1																				
 H	Lfom	SF		H.LfomSF	Safety factor for the height of the linear flow orifice meter			0				1																		1																				
@@ -137,6 +151,7 @@ HL	Sed	Weir		HL.SedWeir	Head loss from water flowing over weir											1
 HL	Sludge	Drain		HL.SludgeDrain												1																																		
 HL	Sludge	Manifold		HL.SludgeManifold				0																																										
 HL	Valve			HL.Valve												1																																		
+EN	Floc	Horiz		EN.FlocHoriz	"Set to 1 if a horizontal flocculator is used, set to 0 for vertical flocculator so that correct values for the type chosen are calculated."			0	1						1																																			
 HW	Et	Channel		HW.EtChannel	Height of the water for the second waterfall in the entrance tank			0													1																													
 HW	Et	Crit		HW.EtCrit	Critical water depth over the waterfall in the entrance tank			0													1																													
 HW	Et	Max		HW.EtMax	Maximum water level in the entrance tank	Nivel máximo de agua en el tanque de entrada		0	1		1						1																1																	
@@ -156,6 +171,9 @@ ID	Fcm	Tube	English	ID.FcmTubeEnglish	Inner diameter for fcm tube in English uni
 ID	Fcm	Tube	Metric	ID.FcmTubeMetric	Inner diameter for fcm tube in metric units			0				1																																						
 ID	Manifold			ID.Manifold																									1																					
 ID	Sed	Sludge		ID.SedSludge				0								1																																		
+J	Floc	Channel		J.FlocChannel	"Width of a horizontal flocculator channel, height of a vertical flocculator"			0							1																																			
+J	Floc	Channel	H	J.FlocChannelH	Width of a horizontal flocculator channel			0							1																																			
+J	Min			J.Min	"Minimum length of flocculator in the direction which water moves (height for vertical, width for horizontal)"			0							1																																			
 K	90			K.90	Loss coefficient for the channel transition in a 90 degree turn			0					1																																					
 K	Angle	Valve		K.AngleValve	Minor loss coefficient for flow through an angle valve			0					1																																					
 K	Chk	Valve	Ball	K.ChkValveBall	the minor loss coefficient for ball check valve			0					1																																					
@@ -182,6 +200,7 @@ K	Slope	Exit		K.SlopeExit				0					1
 K	Tee	Flow	Br	K.TeeFlowBr				0					1																																					
 K	Tee	Flow	Run	K.TeeFlowRun				0					1																																					
 L	Ap	Column		L.ApColumn				0				1																																						
+L	Baffle	Port		L.BafflePort	Length (height) of the drain ports of the baffle																																1													
 L	Channel			L.Channel	Length of the inlet channel	Longitud del canal de entrada		0	1							1																		1																
 L	Cp	Column		L.CpColumn	Length of the chlorine platform column			0				1																																						
 L	Et			L.Et	Length of the entrance tank	Longitud del tanque de entrada		0	1								1																																	
@@ -193,12 +212,19 @@ L	Fcm	Tube		L.FcmTube	Length of tube for the flow control module			0						1					
 L	Fcm	Tube	Max	L.FcmTubeMax	Maximum length of tube allowed for the flow control module			0				1																																						
 L	Fcm	Tube	Min	L.FcmTubeMin	Minimum tube length for the flow control module			0						1																																				
 L	Floc	Baffle	Lower	L.FlocBaffleLower	Length of the lower floc baffles	Longitud de las pantallas inferiores de floculación		1	1						1																																			
-L	Floc	Baffles		L.FlocBaffles				0							1																																			
+L	Floc	Baffle	LowerH	L.FlocBaffleLowerH	Length of the lower floc baffles in a horizontal flocculator	Longitud de las pantallas inferiores de floculación		1							1																																			
+L	Floc	Baffle	LowerV	L.FlocBaffleLowerV	Length of the lower floc baffles in a vertical flocculator	Longitud de las pantallas inferiores de floculación		1							1																																			
+L	Floc	Baffles		L.FlocBaffles				3							1																																			
+L	Floc	Baffles	H	L.FlocBafflesH	Length of the floc baffles in a horizontal flocculator	Longitud de los pantallas superiores de floculación		3							1																																			
+L	Floc	Baffles	V	L.FlocBafflesV	Length of the floc baffles in a vertical flocculator	Longitud de los pantallas superiores de floculación		3							1																																			
 L	Floc	Baffle	Upper	L.FlocBaffleUpper	Length of the upper floc baffles	Longitud de los pantallas superiores de floculación		1	1						1																																			
+L	Floc	Baffle	UpperH	L.FlocBaffleUpperH	Length of the upper floc baffles in a horizontal flocculator	Longitud de los pantallas superiores de floculación		1							1																																			
+L	Floc	Baffle	UpperV	L.FlocBaffleUpperV	Length of the upper floc baffles in a vertical flocculator	Longitud de los pantallas superiores de floculación		1							1																																			
 L	Floc	Entry	Orifice	L.FlocEntryOrifice	Length of the floc entry if the orifice is rectangular																1																													
 L	Floc	Hopper		L.FlocHopper	Length of the floc hopper	Longitud de la tolva recolectora de flóculos en el tanque de sedimentación		0												1																														
 L	Floc	Hopper	Offset	L.FlocHopperOffset	Distance from the edge of the channel to the bottom of the first lamella			0	1											1																														
 L	Floc	Tank		L.FlocTank	Total length of floc tanks			0							1																																			
+L	Floc	With	Walls	L.FlocWithWalls	Length of the floc tank including wall thickness			0	1						1																																			
 L	Inlet	Channel		L.InletChannel	Length of the inlet channel																																													
 L	Lfom			L.Lfom				0									1																																	
 L	Mp	Column		L.MpColumn	Length of the main platform column			0				1																																						
@@ -234,11 +260,21 @@ N	Fcm			N.Fcm	Number of flow control modules			0						1
 N	Fcm	Tube		N.FcmTube	Number of tubes required for the flow control module			0						1																																				
 N	Floc	Baffle	Col	N.FlocBaffleCol				0				1																																						
 N	Floc	Baffles		N.FlocBaffles	Total number of floc baffles	Cantidad total de pantallas de floculación		0	1						1																																			
+N	Floc	Baffles	H	N.FlocBafflesH	Total number of floc baffles in a horizontal flocculator	Cantidad total de pantallas de floculación		0							1																																			
 N	Floc	Baffles	Max	N.FlocBafflesMax	Maximum allowable number of baffles for a single channel										1																																			
 N	Floc	Baffles	Min	N.FlocBafflesMin	Minimum allowable number of baffles for a single channel										1																																			
+N	Floc	Baffles	V	N.FlocBafflesV	Total number of floc baffles in a vertical flocculator	Cantidad total de pantallas de floculación		0							1																																			
 N	Floc	Channel	Baffles	N.FlocChannelBaffles	Number of baffles in each channel	Cantidad de pantallas en cada canal		1	1						1																			1																
-N	Floc	Channel	Spaces	N.FlocChannelSpaces	Array of number of spacings between baffles in each channel										1																																			
+N	Floc	Channel	BafflesH	N.FlocChannelBafflesH	Number of baffles in each channel of a horizontal flocculator	Cantidad de pantallas en cada canal		1							1																																			
+N	Floc	Channel	Spaces	N.FlocChannelSpaces	Array of number of spacings between baffles in each channel			1							1																																			
+N	Floc	Channel	SpacesH	N.FlocChannelSpacesH	Array of number of spacings between baffles in each channel for a horizontal flocculator			1							1																																			
+N	Floc	Channel	SpacesTotalH	N.FlocChannelSpacesTotalH	Total number of spaces between baffles in a horizontal flocculator			0							1																																			
+N	Floc	Channel	SpacesV	N.FlocChannelSpacesV	Array of number of spacings between baffles in each channel for a vertical flocculator			1							1																																			
 N	Floc	Channels		N.FlocChannels	Number of floc channels	Cantidad de canales de floculación		0	1						1																			1																
+N	Floc	Channels	H	N.FlocChannelsH	Number of floc channels in a horizontal flocculator	Cantidad de canales de floculación		0							1																																			
+N	Floc	Channels	V	N.FlocChannelsV	Number of floc channels in a vertical flocculator	Cantidad de canales de floculación		0							1																																			
+N	Floc	Spaces	MaxV	N.FlocSpacesMaxV	Maximum number of floc spaces in a channel of a vertical flocculator	Cantidad de canales de floculación		0							1																																			
+N	Floc	Spaces	MinV	N.FlocSpacesMinV	Minimum number of floc spaces in a channel of a vertical flocculator	Cantidad de canales de floculación		0							1																																			
 N	Launders			N.Launders	Total number of launders																													1																
 N	Lfom			N.Lfom				0				1																																						
 N	Lfom	Orifices	Firstrow	N.LfomOrificesFirstrow	Number of orifices in the first row of the lfom			0				1																																						
@@ -275,6 +311,9 @@ Nu	Fcm	Alum		Nu.FcmAlum	Kinematic viscosity of the alum coagulant in the flow co
 Nu	Water			Nu.Water	Kinematic viscosity of water			0				1																	1				1																	
 Per	Floc	Baffle		Per.FlocBaffle				0				1																																						
 Per	Sed	Plate		Per.SedPlate	Period of curves in plate settlers			0				1																																						
+P	Floc	Channel		P.FlocChannel	"Height of the horizontal flocculator, dith of a vertical flocculator channel"			0							1																																			
+P	Floc	Channel	H	P.FlocChannelH	Height of the horizontal flocculator			0							1																																			
+P	Floc	Channel	V	P.FlocChannelV	Width of a vertical flocculator channel			0							1																																			
 Phi	FB	100NTU		Phi.FB100NTU				0				1																																						
 Phi	FB	500NTU		Phi.FB500NTU				0				1																				1																		
 Pi	D	Mix		Pi.DMix	Ratio of diffusion length scale to Kolmogorov length scale (smallest eddies in turbulent flow)							1																					1																	
@@ -286,7 +325,7 @@ Pi	Floc	Dissipation		Pi.FlocDissipation	ratio of energy dissipation zone	Zona de
 Pi	Flow	Manifold		Pi.FlowManifold	Ratio of flow rate through the last port to the first in the manifold	Proporción del caudal a través del ultimo puerto al primero del túnel de distribución		0			1																		1																					
 Pi	Flow	Launder		Pi.FlowLaunder	Ratio of the flow between the orifices within the launder (farthest orifice over the closest orifice)	Proporción del caudal entre orificios dentro del tubo perforado de salida (el orificio mas lejano sobre el orificio mas cercano)		0			1																																							
 Pi	Flow	Sludge		Pi.FlowSludge	Ratio of the flow between the sludge orifices	Proporción del caudal entre orificios del drenaje de lodo		0			1																																							
-Pi	Hb	Min		Pi.HbMin	Minimum ratio or water depth to baffle spacing																							1																						
+Pi	Js	Min		Pi.JsMin	Minimum ratio or water depth to baffle spacing			0							1																																			
 Pi	Launder			Pi.Launder	"Ratio of the flow between the launders, the long path flow divided by the short path flow"			0			1																																							
 Pi	Lfom	H		Pi.LfomH	Elevation between orifice rows at which the flow is calibrated			0				1																																						
 Pi	Lfom	Orifice		Pi.LfomOrifice				0				1																	1																					
@@ -323,8 +362,12 @@ S	Channel	Pipe	Wall	S.ChannelPipeWall	Extra space allowed on both sides of pipe 
 S	Drum			S.Drum	Space between chemical drums			0				1																																						
 S	Elbow			S.Elbow	Minimum space between elbows in the tank			0				1																						1																
 S	Floc	Baffle		S.FlocBaffle	Space between baffles	Espacio entre pantallas		1	1						1																		1																	
-S	Floc	Baffle	Max	S.FlocBaffleMax	Maximum allowable spacing between baffles in a channel										1																																			
-S	Floc	Baffle	Min	S.FlocBaffleMin	Minimum allowable spacing between baffles in a channel										1																																			
+S	Floc	Baffle	CalcH	S.FlocBaffleCalcH	First guess of spacing between baffles in horizontal flocculator	Espacio entre pantallas		0							1																																			
+S	Floc	Baffle	H	S.FlocBaffleH	Space between baffles in a horizontal flocculator	Espacio entre pantallas		0							1																																			
+S	Floc	Baffle	Min	S.FlocBaffleMin	Minimum allowable spacing between baffles in a channel			0							1																																			
+S	Floc	Baffle	MaxV	S.FlocBaffleMaxV	Maximum allowable spacing between baffles in a channel of a vertical flocculator	Espacio entre pantallas		0							1																																			
+S	Floc	Baffle	MinV	S.FlocBaffleMinV	Minimum allowable spacing between baffles in a channel of a vertical flocculator	Espacio entre pantallas		0							1																																			
+S	Floc	Baffle	V	S.FlocBaffleV	Array of spacing in each channel between baffles in a vertical flocculator	Espacio entre pantallas		0							1																																			
 S	Floc	Channel		S.FlocChannel	Space between the last baffle and the beginning of the port between channels (5cm)	Espacio entre la ultima pantalla y los puertos entre canales en el floculador		0		1																		1																						
 S	Floc	Port		S.FlocPort	Extra space around ports for water making a u-turn (space between the hole and the last baffle)	Espacio extra alrededor de los puertos para que el agua retorne (espacio entre el orificio y la ultima pantalla)		0			1																																							
 S	Plt			S.Plt	Space for concrete between inlet pipes			0				1																																						
@@ -349,9 +392,10 @@ T	Sed	Slope	Plate	T.SedSlopePlate	Thickness of the sedimentation slope plates			
 T	Sed	Tank			Thickness of the sedimentation tank walls																																													
 T	Sed	Sludge		T.SedSludge	Thickness of the sedimentation tank sludge drain			0								1													1					1																
 Tau	Diffusion			Tau.Diffusion	Time scale of diffusion							1																					1																	
-Ti	Floc			Ti.Floc				0							1																																			
+Ti	Floc			Ti.Floc	Residence time in the flocculator			0							1																																			
 Ti	Sludge	Drain		Ti.SludgeDrain	Drainage time for the sedimentation tank	Tiempo de drenaje para el tanque de sedimentación		0		1																			1																					
 Ti	Stock	Min		Ti.StockMin	Duration of alum stock tank at maximum alum dose and plant flow rate			0		1																	1						1	1																
+Ti	wanted				Desired flocculator drain time					1																																								
 V	Et	Channel		V.EtChannel	Velocity in the entrance channel																1																													
 V	Et	Up		V.EtUp	Upflow velocity in the entrance tank	Velocidad ascendente en el tanque de entrada		0			1																						1																	
 V	Floc	Entry	Orifice	V.FlocEntryOrifice	Velocity through the entrance to the flocculator																1																													
@@ -378,7 +422,11 @@ W	Floc	Channel		W.FlocChannel	Width of a single floc channel	Ancho de un canal d
 W	Floc	Channel	Min	W.FlocChannelMin	Minimum width for a floc channel	Ancho mínimo para canales de floculación		0			1																	1																						
 W	Floc	Entry	Orifice	W.FlocEntryOrifice	Width of the rectangular entrance to the flocculator			0													1																													
 W	Floc	Hopper		W.FlocHopper	Width of the floc hopper	Ancho de la tolva recolectora de flóculos en el tanque de sedimentación 		0	1											1																														
-W	Floc	Port		W.FlocPort	Width of the floc port	Ancho del puerto entre canales del floculador		1	1						1														1																					
+W	Floc	Port		W.FlocPort	Width of the floc port (connecting channels)	Ancho del puerto entre canales del floculador		1	1						1														1																					
+W	Floc	Port	EstV	W.FlocPortEstV	Estimated width of the floc port of a vertical flocculator	Ancho del puerto entre canales del floculador		1							1																																			
+W	Floc	Port	H	W.FlocPortH	Width of the floc port of a horizontal flocculator	Ancho del puerto entre canales del floculador		1							1																																			
+W	Floc	Port	V	W.FlocPortV	Width of the floc port of a vertical flocculator	Ancho del puerto entre canales del floculador		1							1																																			
+W	Floc	With	Walls	W.FlocWithWalls	Width of the floc tank including all channels and walls			0	1						1																																			
 W	Inlet	Channel		W.InletChannel	Width of the inlet channel	Ancho del canal de entrada		0	1							1																		1																
 W	Inlet	Channel	ED	W.InletChannelED	Width of the inlet channel based on energy dissipation			0								1																																		
 W	Inlet	Channel	ED	W.InletChannelED	Width of inlet channel specified by energy dissipation constraints			0								1																																		
@@ -408,8 +456,13 @@ W	Sed	Sludge	SF	W.SedSludgeSF																									1
 X	Floc	Baffle		X.FlocBaffle				3				1																																						
 X	Floc	Baffles		X.FlocBaffles				3							1																																			
 Y	Floc	Baffle		Y.FlocBaffle				3				1																																						
+Y	Floc	Baffles		Y.FlocBaffles	Placement of the baffles in the Y position			3							1																																			
+Y	Floc	Baffles	H	Y.FlocBafflesH	Placement of the baffles in the Y position for the horizontal flocculator			3							1																																			
+Y	Floc	Baffles	V	Y.FlocBafflesV	Placement of the baffles in the Y position for the vertical flocculator			3							1																																			
 Y	Sed	Plate		Y.SedPlate				3				1																																						
 Z	Floc	Baffles		Z.FlocBaffles				3							1																																			
+Z	Floc	Baffles	H	Z.FlocBafflesH	Placement of the baffles in the Z position for the horizontal flocculator			3							1																																			
+Z	Floc	Baffles	V	Z.FlocBafflesV	Placement of the baffles in the Z position for the vertical flocculator			3							1																																			
 Z	Floc	Hopper		Z.FlocHopper	Elevation of floc hopper																																													
 Z	Mp			Z.Mp	Height from zero elevation to the main platform			0								1																																		
 Z	Sed	Launder		Z.SedLaunder	Elevation of the sed tank launder	Elevación del Tubo perforado de salida		0	1							1													1																					
