@@ -1,6 +1,6 @@
 3					1	2	3	END						Program Outputs													Program Inputs									Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	variable type	Returned to LabVIEW	Basic Client Inputs	Expert Client Inputs	Design Assumptions	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Materials List	Floc Hopper	Rapid Mixer	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Floc Hopper	Rapid Mix	Materials List		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									119	12	33	74	25	24	94	97	9	0	1	6	17	23	0	0			37	9	59	9	0	9	20	33		0	4	0	0	0	0	114		0	0	0	0	0	0	
+									143	13	33	74	25	24	94	97	9	0	1	6	17	23	0	0			37	9	60	9	0	9	20	33		0	4	0	0	0	0	115		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank	Área del tanque de entrada		0									1				1																													
 A	Et	Channel	Water	A.EtChannelWater	Cross sectional area of the upper channel flow at the critical depth			0													1																													
 A	Et	Orifice		A.EtOrifice	Area of the orifice for the entrance tank			0													1																													
@@ -98,6 +98,29 @@ ED	Target			ED.Target	Energy dissipation needed for a particular collision poten
 EN	Drill	Series		EN.DrillSeries	"enumerated type (0=Metric, 1=English) for drill bit sizes"	Serie de brocas		0	1	1																																								
 EN	Floc	Horiz		EN.FlocHoriz	"equals 1 if the flocculator is horizontal, equals 0 if the flocculator is vertical"			0	1						1													1									1													
 EN	Pipe	Series		EN.PipeSeries	enumerated type for pipe series	Calibre de caño		0	1	1																			1																					
+Flow	Alum	0		Flow.Alum0	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	1		Flow.Alum1	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	2		Flow.Alum2	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	3		Flow.Alum3	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	4		Flow.Alum4	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	5		Flow.Alum5	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	6		Flow.Alum6	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	20		Flow.Alum20	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	21		Flow.Alum21	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	22		Flow.Alum22	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	22		Flow.Alum22	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	23		Flow.Alum23	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	24		Flow.Alum24	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	25		Flow.Alum25	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	26		Flow.Alum26	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	30		Flow.Alum30	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	31		Flow.Alum31	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	32		Flow.Alum32	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	33		Flow.Alum33	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	34		Flow.Alum34	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	35		Flow.Alum35	Required alum flow rate	Calibre de caño		0	1																																									
+Flow	Alum	36		Flow.Alum36	Required alum flow rate	Calibre de caño		0	1																																									
+EN	Tube	Series		EN.TubeSeries	enumerated type for metric or english tubes	Calibre de tubería		0	1	1																			1																					
 EN	Tube	Series		EN.TubeSeries	enumerated type for metric or english tubes	Calibre de tubería		0	1	1																			1																					
 H	Ap	Column		H.ApColumn				0				1																																						
 H	Cp	Column		H.CpColumn	Height of the chlorine platform column			0				1																																						
@@ -391,6 +414,7 @@ Q	Fcm	Valve	Max	Q.FcmValveMax	Maximum flow rate that can be handled by the FCM v
 Q	Flocs			Q.Flocs				0												1																														
 Q	Pipe			Q.Pipe	Table giving the the flow through pipes with various areas given the enrgy dissipation rate at the inlet.																																													
 Q	Plant			Q.Plant	Plant flow rate	Caudal de la planta		0	1	1																	1	1	1	1			1																	
+Q	Plantmin			Q.Plantmin	"Minimum plant flow rate for dosing, where surface tension doesn't cause dosing errors"	Caudal de la planta		0	1	0																	0	0	0	0			0																	
 Q	Plant	Lfom	Max	Q.PlantLfomMax																	1																													
 Q	Sed			Q.Sed	Flow through the sed tank	Caudal de un tanque de sedimentación		0	1							1																1																		
 Q	Sed	Bay		Q.SedBay	Flow rate through one sedimentation tank bay	Caudal de una camera de sedimentación		0	1																																									
@@ -430,6 +454,13 @@ S	Sed	Module	Pipes	S.SedModulePipes	Actual space between the module pipes				1		
 S	Sed	Module	PipesMin	S.SedModulePipesMin	Minimum space between the module pipes.											1																																		
 S	Sed	Plate		S.SedPlate	Space between plate settlers	Espacio entre placas de sedimentación		0	1							1																																		
 S	Sed	Plate	ModuleMin	S.SedPlateModuleMin	Minimum spacing between the start of the lower edge of the pate settlers and the origin of the module pipe				1							1																																		
+Scale	Distance	0		Scale.Distance0	Scale distance on the dosing lever arm				1							0																																		
+Scale	Distance	1		Scale.Distance1	Scale distance on the dosing lever arm				1							0																																		
+Scale	Distance	2		Scale.Distance2	Scale distance on the dosing lever arm				1							0																																		
+Scale	Distance	3		Scale.Distance3	Scale distance on the dosing lever arm				1							0																																		
+Scale	Distance	4		Scale.Distance4	Scale distance on the dosing lever arm				1							0																																		
+Scale	Distance	5		Scale.Distance5	Scale distance on the dosing lever arm				1							0																																		
+Scale	Distance	6		Scale.Distance6	Scale distance on the dosing lever arm				1							0																																		
 sedlayout				sedlayout.				0				1																																						
 T	Ap			T.Ap	Thickness of Alum Platform			0				1																																						
 T	Concrete	Min		T.ConcreteMin	Minimum thickness to support concrete structurally			0	1	1																																								
