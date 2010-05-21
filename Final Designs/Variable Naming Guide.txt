@@ -1,6 +1,6 @@
 3					1	2	3	END						Program Outputs													Program Inputs									Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	variable type	Returned to LabVIEW	Basic Client Inputs	Expert Client Inputs	Design Assumptions	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Materials List	Floc Hopper	Rapid Mixer	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Floc Hopper	Rapid Mix	Materials List		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									112	12	32	74	25	24	90	97	9	0	1	6	17	23	0	0			37	8	59	9	0	9	20	33		0	4	0	0	0	0	113		0	0	0	0	0	0	
+									113	12	33	74	25	24	91	97	9	0	1	6	17	23	0	0			37	9	59	9	0	9	20	33		0	4	0	0	0	0	114		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank	Área del tanque de entrada		0									1				1																													
 A	Et	Channel	Water	A.EtChannelWater	Cross sectional area of the upper channel flow at the critical depth			0													1																													
 A	Et	Orifice		A.EtOrifice	Area of the orifice for the entrance tank			0													1																													
@@ -48,7 +48,7 @@ B	Sed	Plate	Horizontal	B.SedPlateHorizontal	Horizontal distance between the lame
 B	Sed	Plate	Min	B.SedPlateMin	Min perpendicular spacing between lamella	Espacio perpendicular mínimo entre lámelas 		0			1																		1																					
 B	Sed	Sludge	Orifices	B.SedSludgeOrifices	Center-to-center distance between sludge drain orifices	Distancia de centro a centro entre orificios para drenado de lodillo		0	1							1																																		
 Baffle	Complex			Baffle.Complex	"0 if rectangular, 1 if corrugated"			0				1																																						
-Baffle	Type			Baffle.Type	Plastic or Rigid	Altura de los puerto del túnel de distribución			1						1																																			
+Baffle	Type			Baffle.Type	1 for Plastic or 0 for Rigid	Altura de los puerto del túnel de distribución		0	1						1																																			
 C	Alum	Dose	Max	C.AlumDoseMax	Maximum required alum dose	Máxima dosis requerida de sulfato de aluminio		0				1																																						
 C	Alum	Stock		C.AlumStock	concentration of alum in the stock tank	Concentración de sulfato de aluminio en tanque de almacenamiento		0	1	1																						1																		
 C	Alum	Dose	Max	C.AlumDoseMax	Max dose of aluminum sulfate	Dosis máxima de sulfato de aluminio		0		1																	1						1																	
@@ -255,13 +255,14 @@ L	Sed	Launder		L.SedLaunder	Length of the sed tank launder	Longitud del tubo per
 L	Sed	Launder	Est	L.SedLaunderEst	Estimated length of the sed tank launder			0								1																																		
 L	Sed	Manifold	Pipe	L.SedManifoldPipe	Length of the manifold pipe in the sed tank.																																													
 L	Sed	Max		L.SedMax	Maximum length of the sedimentation tank			0								1																																		
+L	Sed	Modified		L.SedModified	Length of the sed tank modified to accommodate for extra spacing at beginning and end of flocculator channel with plastic baffles			0							1																																			
 L	Sed	Module	Pipes	L.SedModulePipes	Length of the pipes that connect the plates within one module.				1							1																																		
 L	Sed	Pipes	Total	L.SedPipesTotal	Total length of pipes in the sed tanks			0																																										
 L	Sed	Plate		L.SedPlate	Length of the plate settlers	Longitud de placas sedimentadores		0	1							1																1		1																
 L	Sed	Plate	Est	L.SedPlateEst	Estimated Length of the lamella (based on channel dimensions)			0								1																																		
 L	Sed	Plate	Sheet	L.SedPlateSheet	Length of the sheets used to make the plate settlers	Longitud de las láminas para elaborar las placas sedimentadoras		0		1																								1																
 L	Sed	Total		L.SedTotal	Total length of a single valley sed tank (placed end to end)			0								1																																		
-L	slot			L.slot	Length of the floc tank slot into which baffles are slipped																																1													
+L	Slot			L.Slot	Length of the floc tank slot into which baffles are slipped																																1													
 Mu	Alum	Slope		Mu.AlumSlope	Dynamic viscosity of alum coagulant			0						1																																				
 Mu	Alum	Slope	Intercept	Mu.AlumSlopeIntercept				0						1																																				
 MW	Al			MW.Al	Molecular weight of aluminum			0						1																																				
@@ -413,6 +414,7 @@ S	Floc	Baffle	OptimalVHumanMin	S.FlocBaffleOptimalVHumanMin	Optimal Spacing in a
 S	Floc	Baffle	PerChannelV	S.FlocBafflePerChannelV	Spacing between baffles per channel in a vertical flocculator	Espacio entre pantallas		0							1																																			
 S	Floc	Baffle	PerChannelVHumanMin	S.FlocBafflePerChannelVHumanMin	Spacing between baffles per channel in a vertical flocculator with rigid baffles	Espacio entre pantallas		0							1																																			
 S	Floc	Baffle	PerChannelVPlastic	S.FlocBafflePerChannelVPlastic	Spacing between baffles per channel in a vertical flocculator with plastic baffles	Espacio entre pantallas		0							1																																			
+S	Floc	Baffle	SetBackPlastic	S.FlocBaffleSetBackPlastic	Amount of space between end floc bafles and ports connecting channels	Espacio entre pantallas		0	1		1																	1																						
 S	Floc	Baffle	V	S.FlocBaffleV	Array of spacing in each channel between baffles in a vertical flocculator	Espacio entre pantallas		0							1																																			
 S	Floc	Port	Gap	S.FlocPortGap	Gap between last baffle and port for flocculator	Espacio extra alrededor de los puertos para que el agua retorne (espacio entre el orificio y la ultima pantalla)		0			1																																							
 S	Floc	Port	GapH	S.FlocPortGapH	Gap between last baffle and port for horizontal flocculator	Espacio extra alrededor de los puertos para que el agua retorne (espacio entre el orificio y la ultima pantalla)		0			1																																							
@@ -452,7 +454,7 @@ Ti	Stock	Min		Ti.StockMin	Duration of alum stock tank at maximum alum dose and p
 Ti	wanted				Desired flocculator drain time					1																																								
 V	Et	Channel		V.EtChannel	Velocity in the entrance channel																1																													
 V	Et	Up		V.EtUp	Upflow velocity in the entrance tank	Velocidad ascendente en el tanque de entrada		0			1																						1																	
-V	Floc	Avg		V.FlocAvg	Average velocityinthe flocculator			0	1						1																																			
+V	Floc			V.Floc	Average velocityinthe flocculator			0	1						1																																			
 V	Floc	Entry	Orifice	V.FlocEntryOrifice	Velocity through the entrance to the flocculator																1																													
 V	Sed	C		V.SedC		Velocidad de captura para que las partículas se asienten en las placas de sedimentación		0	1							1																																		
 V	Sed	C	Bod	V.SedCBod	Capture velocity for particles to settle in plate settlers	Velocidad de captura para que las partículas se asienten en las placas de sedimentación		0			1																		1																					
