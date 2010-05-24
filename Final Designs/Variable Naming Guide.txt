@@ -1,6 +1,6 @@
 3					1	2	3	END						Program Outputs													Program Inputs									Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	variable type	Returned to LabVIEW	Basic Client Inputs	Expert Client Inputs	Design Assumptions	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Materials List	Floc Hopper	Rapid Mixer	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Floc Hopper	Rapid Mix	Materials List		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									144	13	33	74	25	24	94	97	9	0	1	6	17	23	0	0			37	9	60	9	0	9	20	33		0	4	0	0	0	0	115		0	0	0	0	0	0	
+									148	13	33	74	25	24	94	97	9	0	1	6	17	23	0	0			37	9	60	9	0	9	20	33		0	4	0	0	0	0	115		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank	Área del tanque de entrada		0									1				1																													
 A	Et	Channel	Water	A.EtChannelWater	Cross sectional area of the upper channel flow at the critical depth			0													1																													
 A	Et	Orifice		A.EtOrifice	Area of the orifice for the entrance tank			0													1																													
@@ -81,6 +81,9 @@ D	Sed	Launder	Orifice	D.SedLaunderOrifice	Diameter of the sed tank launder orifi
 D	Sed	Sludge		D.SedSludge	Required diameter of the sludge drain if it were circular											1																																		
 D	Sed	Sludge	Orifice	D.SedSludgeOrifice	Diameter of sludge drain orifice	Diámetro del orificio del drenaje de lodo		0	1							1																																		
 Del	Plt	Weir	H	Del.PltWeirH				0								1																																		
+Diameter	Dosing	orifice	1	Diameter.Dosingorifice1	This is the diameter of the smallest dosing orifice			0	1							0																																		
+Diameter	Dosing	orifice	2	Diameter.Dosingorifice2	This is the diameter of the medium dosing orifice			0	1							0																																		
+Diameter	Dosing	orifice	3	Diameter.Dosingorifice3	This is the diameter of the largest dosing orifice			0	1							0																																		
 E	Concrete			E.Concrete	Pipe roughness for flow through a concrete channel			0				1																	1																					
 E	Concrete	Ledge		E.ConcreteLedge								1																					1																	
 E	Pvc			E.Pvc	Roughness coefficient for flow through PVC pipe			0				1										23					28		1																					
@@ -168,6 +171,7 @@ HL	Fcm	Inlet	Design	HL.FcmInletDesign				0				1															1
 HL	Fcm	Tube		HL.FcmTube	Maximum head loss through the flow control module			0				1															1																							
 HL	Fcm	Valve		HL.FcmValve	Head loss due to flow control module valve			0						1																																				
 HL	Fcm	Valve	Freefall	HL.FcmValveFreefall				0				1																																						
+HL	Float	Valve	Orifice	HL.FloatValveOrifice	This is the recommended elevation between the float in the CHT and the stock tank outlet			0	1			0																																						
 HL	Floc			HL.Floc	"head loss through the floc tank in total, used to determine the necessary height for the floc tank walls"	Perdida de carga total en el floculador		0	1						1																																			
 HL	Floc	Baffle		HL.FlocBaffle	Head loss  per baffle in each channel			0							1																																			
 HL	Floc	Channels		HL.FlocChannels	Head loss in each floc channel	Pérdida de carga en cada canal del floculador		1	1						1																																			
@@ -414,7 +418,7 @@ Q	Fcm	Valve	Max	Q.FcmValveMax	Maximum flow rate that can be handled by the FCM v
 Q	Flocs			Q.Flocs				0												1																														
 Q	Pipe			Q.Pipe	Table giving the the flow through pipes with various areas given the enrgy dissipation rate at the inlet.																																													
 Q	Plant			Q.Plant	Plant flow rate	Caudal de la planta		0	1	1																	1	1	1	1			1																	
-Q	Plantmin			Q.Plantmin	"Minimum plant flow rate for dosing, where surface tension doesn't cause dosing errors"	Caudal de la planta		0	1	0																	0	0	0	0			0																	
+Q	Plant	Min		Q.PlantMin	"Minimum plant flow rate for dosing, where surface tension doesn't cause dosing errors"	Caudal de la planta		0	1	0																	0	0	0	0			0																	
 Q	Plant	Lfom	Max	Q.PlantLfomMax																	1																													
 Q	Sed			Q.Sed	Flow through the sed tank	Caudal de un tanque de sedimentación		0	1							1																1																		
 Q	Sed	Bay		Q.SedBay	Flow rate through one sedimentation tank bay	Caudal de una camera de sedimentación		0	1																																									
