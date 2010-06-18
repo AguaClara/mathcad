@@ -1,6 +1,6 @@
 3					1	2	3	END						Program Outputs													Program Inputs									Inputs								Outputs						
 dimension	component	subcomponent	subsub	Variable Name	English Description	Spanish Description	French Description	variable type	Returned to LabVIEW	Basic Client Inputs	Expert Client Inputs	Design Assumptions	Minor Loss Coefficients	FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Materials List	Floc Hopper	Rapid Mixer	Elevations	User+BOD+LabVIEW+MLC	has source	comments		FCM	Flocculation	Sedimentation	Entrance Tank	Plant Level Tank	Floc Hopper	Rapid Mix	Materials List		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Inputs	is input		Entrance Tank	Floc Tank	Sed Tank	Plt	Platform	AutoCAD Outputs	
-									163	12	33	64	25	24	97	97	9	0	1	6	17	23	0	0			36	9	60	9	0	8	19	33		0	4	0	0	0	0	114		0	0	0	0	0	0	
+									141	10	33	63	25	19	97	97	9	0	1	6	17	23	0	0			35	9	58	9	0	8	19	33		0	4	0	0	0	0	111		0	0	0	0	0	0	
 A	Et			A.Et	Area of the entrance tank	Área del tanque de entrada		0									1				1																													
 A	Et	Channel	Water	A.EtChannelWater	Cross sectional area of the upper channel flow at the critical depth			0													1																													
 A	Et	Orifice		A.EtOrifice	Area of the orifice for the entrance tank			0													1																													
@@ -61,17 +61,11 @@ CP	Floc	Channel		CP.FlocChannel	collision potential per floc channel			1	1						
 CP	Floc	Total		CP.FlocTotal	Total collision potential in the flocculator			0	1						1																																			
 CP	Space			CP.Space	Collision potential in one space ofa flocculator			0	1						1																																			
 CP	Space	H		CP.SpaceH	Collision potential in one space of a horizontal flocculator			0							1																																			
+D	Cdc	Alum	Orifices	D.CdcAlumOrifices				1	1																																									
 D	Drill			D.Drill	Diameter for drill bits in desired units			0				1																	1																					
 D	Drill	Eng		D.DrillEng	Diameter for drill bits in English units			0				1																																						
 D	Drill	Met		D.DrillMet	Diameter for drill bits in metric units			0				1																																						
 D	Drum			D.Drum	Diameter of chemical drums			0				1																																						
-D	Fcm	LongTube	Max	D.FcmLongTubeMax				0																																										
-D	Fcm	Tube	Available	D.FcmTubeAvailable	Diameter of available tubes for the flow control module			0						1																																				
-D	Fcm	Tube	Max	D.FcmTubeMax	Maximum diameter of tube allowed for the flow control module			0						1																																				
-D	Fcm	Tube	Min	D.FcmTubeMin	Minimum diameter of the FCM tube required			0						1																																				
-D	Fcm	Tube	MinHeadloss	D.FcmTubeMinHeadloss	Minimum tube diameter for the FCM to produce the desired head loss at maximum flow			0						1																																				
-D	Fcm	Tube	MinLaminar	D.FcmTubeMinLaminar	Minimum tube diameter for the FCM to maintain laminar flow			0						1																																				
-D	Fcm	Valve	Orifice	D.FcmValveOrifice	Diameter of the valve in the FCM			0				1															1																							
 D	Floc	Entry	Orifice	D.FlocEntryOrifice	Diameter of the floc entry orifice if it is a circle																1																													
 D	m			D.m	Diffusion coefficient							1																					1																	
 D	Plt	Weir	Estimated	D.PltWeirEstimated				0								1																																		
@@ -81,9 +75,6 @@ D	Sed	Launder	Orifice	D.SedLaunderOrifice	Diameter of the sed tank launder orifi
 D	Sed	Sludge		D.SedSludge	Required diameter of the sludge drain if it were circular											1																																		
 D	Sed	Sludge	Orifice	D.SedSludgeOrifice	Diameter of sludge drain orifice	Diámetro del orificio del drenaje de lodo		0	1							1																																		
 Del	Plt	Weir	H	Del.PltWeirH				0								1																																		
-Diameter	Dosing	orifice	1	Diameter.Dosingorifice1	This is the diameter of the smallest dosing orifice			0	1							0																																		
-Diameter	Dosing	orifice	2	Diameter.Dosingorifice2	This is the diameter of the medium dosing orifice			0	1							0																																		
-Diameter	Dosing	orifice	3	Diameter.Dosingorifice3	This is the diameter of the largest dosing orifice			0	1							0																																		
 E	Concrete			E.Concrete	Pipe roughness for flow through a concrete channel			0				1																	1																					
 E	Concrete	Ledge		E.ConcreteLedge								1																					1																	
 E	Pvc			E.Pvc	Roughness coefficient for flow through PVC pipe			0				1										23					28		1																					
@@ -107,27 +98,6 @@ EN	Tube	Series		EN.TubeSeries	enumerated type for metric or english tubes	Calibr
 EN	Floc	Horiz		EN.FlocHoriz	"Set to 1 if a horizontal flocculator is used, set to 0 for vertical flocculator so that correct values for the type chosen are calculated."			0	1						1																																			
 EN	Floc	Baffle		EN.FlocBaffle	"0 if plastic, 1 if rigid"			0	1						1																																			
 Q	Alum	0		Q.Alum0	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	1		Q.Alum1	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	2		Q.Alum2	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	3		Q.Alum3	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	4		Q.Alum4	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	5		Q.Alum5	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	6		Q.Alum6	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	20		Q.Alum20	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	21		Q.Alum21	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	22		Q.Alum22	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	22		Q.Alum22	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	23		Q.Alum23	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	24		Q.Alum24	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	25		Q.Alum25	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	26		Q.Alum26	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	30		Q.Alum30	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	31		Q.Alum31	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	32		Q.Alum32	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	33		Q.Alum33	Required alum flow rate	Calibre de caño		0	1																																									
-Q	Alum	34		Q.Alum34	Required alum flow rate	Calibre de caño		0	1	1																			1																					
-Q	Alum	35		Q.Alum35	Required alum flow rate	Calibre de caño		0	1	1																			1																					
-Q	Alum	36		Q.Alum36	Required alum flow rate	Calibre de caño		0																																										
 H	Ap	Column		H.ApColumn	Height of the alum platform column			0				1																																						
 H	Cp	Column		H.CpColumn	Height of the chlorine platform column			0				1																																						
 H	d	max		H.dmax				0				1																																						
@@ -454,13 +424,6 @@ S	Sed	Module	Pipes	S.SedModulePipes	Actual space between the module pipes				1		
 S	Sed	Module	PipesMin	S.SedModulePipesMin	Minimum space between the module pipes.											1																																		
 S	Sed	Plate		S.SedPlate	Space between plate settlers	Espacio entre placas de sedimentación		0	1							1																																		
 S	Sed	Plate	ModuleMin	S.SedPlateModuleMin	Minimum spacing between the start of the lower edge of the pate settlers and the origin of the module pipe				1							1																																		
-Scale	Distance	0		Scale.Distance0	Scale distance on the dosing lever arm				1							0																																		
-Scale	Distance	1		Scale.Distance1	Scale distance on the dosing lever arm				1							0																																		
-Scale	Distance	2		Scale.Distance2	Scale distance on the dosing lever arm				1							0																																		
-Scale	Distance	3		Scale.Distance3	Scale distance on the dosing lever arm				1							0																																		
-Scale	Distance	4		Scale.Distance4	Scale distance on the dosing lever arm				1							0																																		
-Scale	Distance	5		Scale.Distance5	Scale distance on the dosing lever arm				1							0																																		
-Scale	Distance	6		Scale.Distance6	Scale distance on the dosing lever arm				1							0																																		
 sedlayout				sedlayout.				0				1																																						
 T	Ap			T.Ap	Thickness of Alum Platform			0				1																																						
 T	Concrete	Min		T.ConcreteMin	Minimum thickness to support concrete structurally			0	1	1																																								
