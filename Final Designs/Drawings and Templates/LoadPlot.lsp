@@ -1,0 +1,1 @@
+(DEFUN C:LoadPlot () (setq expert (getvar "EXPERT")) (setvar "EXPERT" 2) (command "._-PSETUPIN" "AguaClaraPlot.dwg" "*"))
