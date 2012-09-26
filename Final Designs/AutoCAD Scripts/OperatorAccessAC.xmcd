@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?validation-md5-digest 0f6fe119389137e2114e4738214e9d73?>
+<?validation-md5-digest 5827911d675bea465320a5949ef21527?>
 <worksheet version="3.0.3" xmlns="http://schemas.mathsoft.com/worksheet30" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ws="http://schemas.mathsoft.com/worksheet30" xmlns:ml="http://schemas.mathsoft.com/math30" xmlns:u="http://schemas.mathsoft.com/units10" xmlns:p="http://schemas.mathsoft.com/provenance10">
 	<pointReleaseData/>
 	<metadata>
@@ -13,9 +13,9 @@
 			<revisedBy>mw24</revisedBy>
 		</userData>
 		<identityInfo>
-			<revision>48</revision>
+			<revision>49</revision>
 			<documentID>E77998B2-730B-49E8-8850-A7C4D1C1C059</documentID>
-			<versionID>68D82EAA-31AC-4D63-ACB8-B6227D154B50</versionID>
+			<versionID>A18110BE-573A-41B6-80E2-9B6063D33528</versionID>
 			<parentVersionID>00000000-0000-0000-0000-000000000000</parentVersionID>
 			<branchID>00000000-0000-0000-0000-000000000000</branchID>
 		</identityInfo>
@@ -107,7 +107,7 @@
 		</editor>
 		<fileFormat image-type="image/png" image-quality="75" save-numeric-results="true" exclude-large-results="true" save-text-images="false" screen-dpi="96"/>
 		<miscellaneous>
-			<handbook handbook-region-tag-ub="5697" can-delete-original-handbook-regions="true" can-delete-user-regions="true" can-print="true" can-copy="true" can-save="true" file-permission-mask="4294967295"/>
+			<handbook handbook-region-tag-ub="5699" can-delete-original-handbook-regions="true" can-delete-user-regions="true" can-print="true" can-copy="true" can-save="true" file-permission-mask="4294967295"/>
 		</miscellaneous>
 	</settings>
 	<regions>
@@ -127,7 +127,7 @@
 				</p>
 			</text>
 		</region>
-		<region region-id="5698" left="0" top="195" width="6008.25" align-x="0" align-y="195" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="" height="3164.25">
+		<region region-id="5699" left="0" top="195" width="6008.25" align-x="0" align-y="195" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="" height="3164.25">
 			<area is-collapsed="true" name="" show-name="false" show-border="true" show-icon="true" show-timestamp="true" allow-expand="false" is-locked="false" timestamp="" top-lock-id="4346" bottom-lock-id="4743">
 				<region region-id="4276" left="36" top="27" width="180" height="66" align-x="87.75" align-y="62.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 					<math error="This variable is undefined." optimize="false" disable-calc="false">
@@ -562,7 +562,7 @@
 						</ml:define>
 					</math>
 				</region>
-				<region region-id="4308" left="36" top="661.5" width="285.75" height="57" align-x="103.5" align-y="692.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+				<region region-id="4308" left="36" top="661.5" width="454.5" height="57" align-x="103.5" align-y="692.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 					<math error="This variable is undefined." optimize="false" disable-calc="false">
 						<ml:define xmlns:ml="http://schemas.mathsoft.com/math30">
 							<ml:id xml:space="preserve" subscript="Dim">SedSubBox</ml:id>
@@ -577,19 +577,31 @@
 									<ml:id xml:space="preserve" subscript="Sed">L</ml:id>
 								</ml:apply>
 								<ml:apply>
-									<ml:mult/>
-									<ml:id xml:space="preserve" subscript="SedTanks">N</ml:id>
-									<ml:parens>
+									<ml:plus/>
+									<ml:apply>
+										<ml:minus/>
 										<ml:apply>
-											<ml:plus/>
-											<ml:apply>
-												<ml:mult/>
-												<ml:id xml:space="preserve" subscript="SedBays">N</ml:id>
-												<ml:id xml:space="preserve" subscript="SedBay">W</ml:id>
-											</ml:apply>
-											<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+											<ml:mult/>
+											<ml:id xml:space="preserve" subscript="SedTanks">N</ml:id>
+											<ml:parens>
+												<ml:apply>
+													<ml:plus/>
+													<ml:apply>
+														<ml:mult/>
+														<ml:id xml:space="preserve" subscript="SedBays">N</ml:id>
+														<ml:id xml:space="preserve" subscript="SedBay">W</ml:id>
+													</ml:apply>
+													<ml:id xml:space="preserve" subscript="SedWallDivider">T</ml:id>
+												</ml:apply>
+											</ml:parens>
 										</ml:apply>
-									</ml:parens>
+										<ml:id xml:space="preserve" subscript="SedWallDivider">T</ml:id>
+									</ml:apply>
+									<ml:apply>
+										<ml:mult/>
+										<ml:real>2</ml:real>
+										<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+									</ml:apply>
 								</ml:apply>
 								<ml:apply>
 									<ml:plus/>
@@ -671,7 +683,7 @@
 						</ml:define>
 					</math>
 				</region>
-				<region region-id="4306" left="36" top="889.5" width="450" height="57" align-x="105.75" align-y="920.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+				<region region-id="4306" left="36" top="889.5" width="457.5" height="57" align-x="105.75" align-y="920.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 					<math error="This variable is undefined." optimize="false" disable-calc="false">
 						<ml:define xmlns:ml="http://schemas.mathsoft.com/math30">
 							<ml:id xml:space="preserve" subscript="Dim">FlocSubBox</ml:id>
@@ -700,7 +712,11 @@
 												</ml:apply>
 											</ml:parens>
 										</ml:apply>
-										<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+										<ml:apply>
+											<ml:mult/>
+											<ml:real>2</ml:real>
+											<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+										</ml:apply>
 									</ml:apply>
 									<ml:id xml:space="preserve" subscript="FlocChannelWall">T</ml:id>
 								</ml:apply>
@@ -1001,10 +1017,10 @@
 											<ml:real>0</ml:real>
 										</ml:apply>
 										<ml:provenance expr-id="1">
-											<originRef doc-id="160D6BC6-8B12-4490-8CB2-2A0D7D365C0A" version-id="7684BAFD-1C1D-43AA-B6B0-DE989B19BEA8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="102713132" is-modified="true" region-id="14320" href="C:\Documents and Settings\mas352\Desktop\Final Designs 2\AutoCAD Scripts\EntranceTankAC.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+											<originRef doc-id="160D6BC6-8B12-4490-8CB2-2A0D7D365C0A" version-id="7684BAFD-1C1D-43AA-B6B0-DE989B19BEA8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="928022500" is-modified="true" region-id="14320" href="C:\Documents and Settings\mas352\Desktop\Final Designs 2\AutoCAD Scripts\EntranceTankAC.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 												<hash/>
 											</originRef>
-											<parentRef doc-id="160D6BC6-8B12-4490-8CB2-2A0D7D365C0A" version-id="7684BAFD-1C1D-43AA-B6B0-DE989B19BEA8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="424219332" is-modified="true" region-id="14320" href="C:\Documents and Settings\mas352\Desktop\Final Designs 2\AutoCAD Scripts\EntranceTankAC.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+											<parentRef doc-id="160D6BC6-8B12-4490-8CB2-2A0D7D365C0A" version-id="7684BAFD-1C1D-43AA-B6B0-DE989B19BEA8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="916531772" is-modified="true" region-id="14320" href="C:\Documents and Settings\mas352\Desktop\Final Designs 2\AutoCAD Scripts\EntranceTankAC.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 												<hash/>
 											</parentRef>
 											<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -1408,7 +1424,7 @@
 						</ml:define>
 					</math>
 				</region>
-				<region region-id="5575" left="60" top="2299.5" width="492" height="57" align-x="136.5" align-y="2330.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+				<region region-id="5575" left="60" top="2299.5" width="517.5" height="57" align-x="136.5" align-y="2330.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 					<math error="This variable is undefined." optimize="false" disable-calc="false">
 						<ml:define xmlns:ml="http://schemas.mathsoft.com/math30">
 							<ml:id xml:space="preserve" subscript="Dim">FiAuxSubBox</ml:id>
@@ -1418,13 +1434,17 @@
 									<ml:apply>
 										<ml:minus/>
 										<ml:apply>
-											<ml:mult style="auto-select"/>
-											<ml:real>-3</ml:real>
-											<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+											<ml:minus/>
+											<ml:apply>
+												<ml:mult style="auto-select"/>
+												<ml:real>-2</ml:real>
+												<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+											</ml:apply>
+											<ml:id xml:space="preserve" subscript="FiEntrance">L</ml:id>
 										</ml:apply>
-										<ml:id xml:space="preserve" subscript="FiEntrance">L</ml:id>
+										<ml:id xml:space="preserve" subscript="FiExit">L</ml:id>
 									</ml:apply>
-									<ml:id xml:space="preserve" subscript="FiExit">L</ml:id>
+									<ml:id xml:space="preserve" subscript="ChannelWall">T</ml:id>
 								</ml:apply>
 								<ml:apply>
 									<ml:minus/>
@@ -1441,7 +1461,7 @@
 												<ml:apply>
 													<ml:plus/>
 													<ml:id xml:space="preserve" subscript="FiEntrance">W</ml:id>
-													<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+													<ml:id xml:space="preserve" subscript="ChannelWall">T</ml:id>
 												</ml:apply>
 											</ml:parens>
 										</ml:apply>
@@ -1465,7 +1485,7 @@
 											<ml:apply>
 												<ml:plus/>
 												<ml:id xml:space="preserve" subscript="FiOverflow">W</ml:id>
-												<ml:id xml:space="preserve" subscript="PlantWall">T</ml:id>
+												<ml:id xml:space="preserve" subscript="ChannelWall">T</ml:id>
 											</ml:apply>
 										</ml:parens>
 									</ml:apply>
@@ -1599,10 +1619,10 @@
 				<region region-id="5497" left="48" top="2610.75" width="401.25" height="45.75" align-x="114" align-y="2636.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 					<math error="This variable is undefined." optimize="false" disable-calc="false">
 						<ml:provenance expr-id="1" xmlns:ml="http://schemas.mathsoft.com/math30">
-							<originRef doc-id="D6327416-A9C4-4EBF-8126-48DD5A082C04" version-id="2F3CB422-1652-4ADA-A159-5AFCD23DF6B8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="424301604" is-modified="true" region-id="0" href="C:\Users\aguaclara\Desktop\Final Designs\AutoCAD Scripts\CdcACvlk24.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+							<originRef doc-id="D6327416-A9C4-4EBF-8126-48DD5A082C04" version-id="2F3CB422-1652-4ADA-A159-5AFCD23DF6B8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="908956980" is-modified="true" region-id="0" href="C:\Users\aguaclara\Desktop\Final Designs\AutoCAD Scripts\CdcACvlk24.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 								<hash/>
 							</originRef>
-							<parentRef doc-id="D6327416-A9C4-4EBF-8126-48DD5A082C04" version-id="2F3CB422-1652-4ADA-A159-5AFCD23DF6B8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="423382860" is-modified="true" region-id="0" href="C:\Users\aguaclara\Desktop\Final Designs\AutoCAD Scripts\CdcACvlk24.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
+							<parentRef doc-id="D6327416-A9C4-4EBF-8126-48DD5A082C04" version-id="2F3CB422-1652-4ADA-A159-5AFCD23DF6B8" branch-id="00000000-0000-0000-0000-000000000000" revision-num="618114244" is-modified="true" region-id="0" href="C:\Users\aguaclara\Desktop\Final Designs\AutoCAD Scripts\CdcACvlk24.xmcd" xmlns="http://schemas.mathsoft.com/provenance10">
 								<hash/>
 							</parentRef>
 							<comment xmlns="http://schemas.mathsoft.com/provenance10"/>
@@ -2008,7 +2028,7 @@
 						</ml:define>
 					</math>
 				</region>
-				<region region-id="5039" left="48" top="3095.25" width="1377.75" height="12.75" align-x="118.5" align-y="3104.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+				<region region-id="5039" left="48" top="3095.25" width="1471.5" height="12.75" align-x="118.5" align-y="3104.25" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 					<math error="This variable is undefined." optimize="false" disable-calc="false">
 						<ml:define xmlns:ml="http://schemas.mathsoft.com/math30">
 							<ml:id xml:space="preserve">PlantFloorScript</ml:id>
@@ -2031,6 +2051,7 @@
 									<ml:id xml:space="preserve">FiSiphonSubBox</ml:id>
 									<ml:id xml:space="preserve">ArrayFiSiphonSubBox</ml:id>
 									<ml:id xml:space="preserve">FiAuxSubBox</ml:id>
+									<ml:id xml:space="preserve">FiInletChannelSubBox</ml:id>
 									<ml:id xml:space="preserve">DosingSubBox</ml:id>
 									<ml:id xml:space="preserve">GroupDelete</ml:id>
 									<ml:id xml:space="preserve">SubtractBoxes</ml:id>
@@ -2045,7 +2066,7 @@
 			</area>
 			<rendering item-idref="1"/>
 		</region>
-		<region region-id="5615" left="6" top="229.5" width="185.25" height="16.5" align-x="90.75" align-y="238.5" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
+		<region region-id="5615" left="6" top="228.75" width="185.25" height="16.5" align-x="90.75" align-y="237.75" show-border="false" show-highlight="false" is-protected="true" z-order="0" background-color="inherit" tag="">
 			<math error="This variable is undefined." optimize="false" disable-calc="false">
 				<ml:define xmlns:ml="http://schemas.mathsoft.com/math30">
 					<ml:id xml:space="preserve" subscript="OperatorAccess">AC</ml:id>
