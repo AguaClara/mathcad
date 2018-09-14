@@ -18,4 +18,4 @@ SVN versions had associated numbers, starting from 0 and going up to 7825. These
   * On both mac terminal and Windows **git bash**, you can use the following bash command: `git log --all --grep='design@4921'` to find the commit associated with version 4921.
 2. Once you've found the relevant commit hash, you can "checkout" the version with `git checkout <commit hash here>`. For example, for the version 4921 that I found above, I would write `git checkout cbd1eee3eb3ea337458cf2a35bd877da92025ce4`.
 3. You are now in `DETATCHED HEAD` state, meaning you can't change anything permanently. Instead, just look around for what you need, or run some MathCAD functions, etc...
-4. To get back to the most recent version, run `git pull`.  
+4. To get back to the most recent version, run `git checkout master`.  
