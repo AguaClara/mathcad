@@ -8,6 +8,10 @@ They are ported over from a decommissioned svn repository into git.
 
 We use git lfs to hold the large files. That speeds up the checkout process.
 
+## Opening these files with MathCAD
+
+These files somehow got corrupted when loaded to github. To recover a file download it, then change the file extension to zip. Unzip it. Then browse to the "originalWorksheet". Inside that folder you will find a Mathcad readable file.
+
 ## Versions
 
 SVN versions had associated numbers, starting from 0 and going up to 7825. These version numbers are how the old design tool tracked which iteration of the tool was creating the design. In MathCAD design tool lingo, we'd say something like "The Gracias plant was made with version 4931". Since converting to git, we can't directly search for the version. Instead, we have to use some program to hunt through the git commits and read all the git logs. This is much faster than I'm making it sound.
